@@ -1,0 +1,16 @@
+*특정 색의 전체적인 색감을 보정할 때 사용한다.
+
+[Image]-[Adjustments]-[Selective Color]
+
+Method :색을 보정하는 방식을 선택한다.
+        -Relative:기존의 색상에 색상 값을 더하거나 뺀다.
+        -Absolute:선택한 색상의 값을 추가한다.
+
+
+<작업-색감 높이기>
+
+1.[Image]-[Adjustments]-[Selective Color]
+2.Color:'Reds' , Cyan:-100 , Magenta:50 , Yellow:100
+3.Color:'Cyans' , Cyan:100 , Magenta:100
+4.Color:'Greens' , Cyan:100 , Magenta:60 , Yellow:100
+

@@ -1,0 +1,19 @@
+
+<작업-스케치한 느낌의 흑백 성 만들기>
+
+1.'성.jpg' 이미지를 불러온다.
+
+2.Gtrl+J (레이어 복사)
+
+3.[Filter]-[Stylize]-[Find Edges]
+  -find edges : 색상경계 영역을 부각시키고 다른 부분은 단순화시켜 경계선을 강조 할 수 있는 필터입니다.
+
+4.[Filter]-[Filter Gallery]를 선택한다.[Artistic]-[Poster Edges] => 'OK'
+  -poster edges : 이미지의 경계면에 검은 색상을 추가하여 포스터나 목판화같은 효과를 주는 필터입니다.
+
+5.복사된 레이어에서 Blending Mode를 'Color Dodge'로 설정한다.
+  -색상 닷지(Color Dodge) : 각 채널의 색상정보를 보고 대비를 감소시켜 기본 색상을 밝게 하여 혼합 색상을 반영한다. 
+
+6.Adjustments 패널에서 -[Hue/Saturation]를 선택한다.
+  -Hue:0, Saturation:-100 으로 설정한다.
+

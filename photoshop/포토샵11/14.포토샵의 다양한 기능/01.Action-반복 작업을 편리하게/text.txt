@@ -1,0 +1,44 @@
+*액션은 반복되는 작업의 순서를 기록해두었다가 Batch 기능을 이용하여 다른 이미지에 적용하는 방법이다.
+
+[Window]-[Action]  (Alt+F9)
+
+[File]-[Automate]-[Batch]  => 액션을 여러 이미지에 한꺼번에 적용할 때 사용된다. 
+
+
+
+<작업-여러이미지에 한꺼번에 처리하기>
+
+1.'동물1.jpg'를 불러온다.
+
+2.[Window]-[Action]을 클릭한다.
+  -하단 메뉴에 Create New Set(새폴더)를 클릭하고 Name에 '나의액션'을 입력한다.
+  -하단 메뉴에 Create New Action 버튼을 클릭하고 Name에 '이니셜넣기'를 입력한 후 [Record]버튼을 클릭한다.
+
+3.메뉴에서 [Image]-[Image Size] (Alt+Ctrl+I)를 클릭한다.
+  -Width:800, Height:600 으로 입력한다.
+  
+4.메뉴에서 [Image]-[Adjustmemts]-[Desaturation] (Shift+Ctrl+U) 를 클릭한다. => 이미지를 흑백 이미지로 만든다
+
+5.가로문자툴을 선택한다.
+  -글씨체:'맑은고딕', bold, 크기:'60pt', 색상:흰색
+  -'동물 농장'을 입력한다.
+
+6.메뉴에서 [File]-[Save as] (Ctrl+Shift+S) 
+  -'Batch결과' 폴더를 선택하고 저장한다.
+
+7.[Action]패널에서 'Stop' 버튼을 눌러 기록을 중지한다. (여기까지의 과정이 기록된다.)
+
+8.[File]-[Automate]-[Batch]를 클릭한다.
+  -'Play'의 'Set'은 '나의액션', 'Action'은 '이니셜넣기'
+  -'Source'는 'Folder', 'Choose' 버튼을 클릭하여 '원본동물' 폴더를 선택한다.
+  -'Destination'은 'Folder', 'Choose' 버튼을 클릭하여 'Batch결과' 폴더를 선택한다.
+  -'Override Action Save As Commands'에 체크하고 'OK'버튼을 클릭한다.
+
+9.화면에 이미지가 순서대로 나타났다 사라진다.
+  'Batch결과' 폴더를 열어보면 완성된 이미지가 들어 있는 것을 볼 수 있다. 
+
+
+
+
+*이미지 흑백만들기 => (Shift+Ctrl+U)
+ 

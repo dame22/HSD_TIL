@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        document.write("<h1>if(조건문)</h1>")
+
+        var a = 30;
+        var b = 100;
+        var avg  = (a+b)/2; // 평균
+        var grap = null; // 등급
+
+        /* 평균 60이상 '합격'
+           평균 60미만 '불합격'*/
+
+        
+        if(avg>=60){
+            document.write('합격');
+        }else{
+            document.write('불합격');
+        }
+        
+
+
+        /*===========================================*/
+
+
+        // avg >= 60  a >= 40, b>= 40 
+
+                        document.write("<br>") // 그냥 엔터침
+
+        if(avg>=60 && a>=40 && b>=40){  // avg>=60 && (a>=40 && b>=40) 묶어주는게 좋다.. 
+            document.write('합격');
+        }else{
+            document.write('불합격');
+        }
+
+
+        /*=====================================*/
+
+
+        // 90이상 A, 80이상 B, 70이상 C, 60이상 D, 60미만 E
+
+
+        if(avg>=90){
+            grap = 'A';
+        }else if(avg>=80){
+            grap = 'B';
+        }
+        else if(avg>=70){
+            grap = 'C';
+        }
+        else if(avg>=60){
+            grap = 'D';
+        }
+        else{
+            grap = 'E';
+        }
+
+        document.write("<br>평균" + avg + "점" + grap + "등급");
+
+
+
+        /* ===================  prompt  ====================
+                    값을 입력할 수 있는 팝업 창이 뜸           */
+
+
+        var a = prompt('국어점수?');  // a는 현재 string 값
+            b = prompt('영어점수?');
+            name = prompt('이름은?')
+            //a = Number(a);           // string 값을 number으로 변경함 
+            //a = parseInt(a);          // 숫자 뒤에 문자열이 들어오면 문자열을 버려줌 
+            a = parseInt(a);        // prompt에 입력한 값을 parseInt에 입력함
+;           b = parseInt(b);
+
+        document.write("<h1>Prompt</h1>");
+
+        /* 국어:60점 / 영어:80점
+            총점:140점 / 평균:70점 */
+        document.write("국어 : " + a + "점 " + "영어 : " + b + "점")
+        document.write("<br>총점 : " + (a+b) + "점 " + "평균 : " + (a+b)/2 + "점")
+        /* var sum = a+b
+            avg = sum/2;
+            document.write("총점 : " + sum + : 점 + "평균 : " + avg + "점")
+            */
+
+        if(name == "홍길동"){
+            document.write("<br>국어 : " + a + "점 " + "영어 : " + b + "점 " + 
+            "총점 : " + (a+b) + "점 " + "평균 : " + (a+b)/2 + "점")
+        }else{
+            document.write("<br>NOOOOOO")
+        }
+        
+
+
+        /*==============================================*/
+
+
+        document.write("<h1>ex01-if 조건문 활용</h1>");
+
+        var a = prompt("좋아하는 숫자는?")
+            a = parseInt(a);
+
+            if(a%2 == 0){
+                document.write("<br>짝수"+a);
+            /*  1/10 => 1
+                2/10 => 2
+                3/10 => 3 ... 나눌 수 없을 경우에는 나누지 않고 출력된다*/
+            }else{
+                document.write("<br>홀수"+a);
+            }
+
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

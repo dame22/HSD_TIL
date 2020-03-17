@@ -1,0 +1,53 @@
+
+<작업-물방울 만들기>
+
+1.'꽃.jpg' 이미지를 불러온다.
+
+2.새 레이어를 추가한다.
+
+  -전경색:검정색, 배경색:흰색으로 설정하고 [Filter]-[Render]-[Clouds]를 적용한다.
+   (clouds : 색상모드의 전경색상과 배경색상을 섞어 줍니다.구름의 이미지를 만든다.)
+
+  -[Filter]-[Stylize]-[Find Edges]를 적용한다.
+   (find edges : 색상경계 영역을 부각시키고 다른 부분은 단순화시켜 경계선을 강조 할 수 있는 필터다.)
+
+  -[image]-[Adjustments]-[Threshold]를 클릭한다. (Threshold : 흰색과 검은색 만으로 이미지를 표현한다.)
+   Threshold Level:250 으로 설정한다.
+
+  -[Filter]-[Filter Gallery]를 클릭한다.
+   [Sketch]-[Plaster] => image Balance:27 , Smoothness:13 으로 설정한다.
+   (Plaster : plaster라는 말은 석고를 의미하는 말로,회반죽으로 이미지를 구성하는 입체적인 효과를 주는 필터입니다.금속성의 느낌이 강한 필터다.)
+  
+  -마술봉툴을 선택하여 검은색 배경을 클릭한다 => Delete 를 눌러 배경을 삭제하고 Ctrl+D 를 눌러 선택을 해제한다.
+
+  -Blending Mode를 'Overlay'로 변경한다.
+
+  -[Filter]-[Blur]-[Iris Blur]를 클릭한다.
+   조절점을 밖으로 드래그(사이즈를 크게한다.) 하고 'OK'
+
+
+
+=====================================
+
+* <작업-물방울 만들기2>
+
+    -새 레이어를 추가한다. '물방울'로 이름을 준다.
+    -색을 흰색으로 채운다.
+    -전경색:검정, 배경색:흰색
+    -[Filter]-[Noise]-[Add Noise]   -> Amount:150으로 설정한다.
+    -[Filter]-[Filter Gallery]를 클릭한다.
+    - [Sketch]-[plaster] -> Image Balance:36, Smoothness:10 설정한다.
+    -마술봉툴을 선택하고 검은색 부분을 클릭하고 Delete를 누른다.
+    -Ctrl+D로 선택 영역 해제하고 Blend Mode를 'Overlay'로 변경한다.
+    -지우개툴을 선택하고 나뭇잎과 화장품 부분 이외의 물방울 부분을 지운다. 브러시 사이즈:100
+
+
+
+
+
+
+
+
+
+
+   

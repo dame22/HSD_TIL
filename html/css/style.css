@@ -1,0 +1,39 @@
+@import url('common.css');
+
+/* 인라인, 블럭요소가 아닌 디스플레이 요소*/
+
+.t_board{
+    width: 1000px; margin: 0 auto;
+    border-collapse: collapse; /*기본으로 나뉘어진 선을 지움*/
+    }
+
+.t_board thead th{
+    background: #555;
+    padding: 15px 0;
+    
+}
+
+.t_board tbody td{
+     border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.t_board tbody td:nth-of-type(2){
+    text-align: left;    
+  
+}
+
+.t_board tfoot td{
+    text-align: right;
+}
+
+.t_board tbody td p{width: 700px; /* 내용이 넓이 700px을 넘어가면,,*/
+    white-space: nowrap; /* 내용이 여러줄일때 한 줄로 처리되게함 */
+    overflow:hidden; /* 한 줄로 처리된 내용이 너비를 넘치면 안보이게함 */
+    text-overflow: ellipsis; /*text가 부모를 넘어섰을때 ... 처리됨*/
+    
+}
+
+
+.t_board tbody tr:nth-of-type(even) td{background: #eee;}

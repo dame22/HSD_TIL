@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+    <div class="res">
+        <div>font size</div>
+        <div>box size</div>
+    </div>
+
+    <style>
+        .res{
+            width: 1200px;
+            border: 5px solid #f00;
+        }
+
+        .res:after{
+            clear: left;
+            display: block;
+            content: '';
+        }
+        .res div{
+            float: left;
+            width: 50%;height: 60vh;
+            border: 3px solid #00f;
+            box-sizing: border-box;
+            font-size: 5vw; /* 1920 / 100 >> 19.2 (1vw당 1px) * 5 = 약 95px*/
+        }
+
+        
+        
+        
+/*=========================================================*/
+        
+        
+        
+        
+        @media(max-width:1024px){
+            .res{
+            width: 100%;
+            border: 5px solid #f00;
+        }
+            .res div{
+            width: 50%; height: 50vw;
+            border: 3px solid #00f;
+            box-sizing: border-box;
+            font-size: 5vw;
+        }
+        }
+        
+        @media(max-width:768px){
+            .res{
+            width: 100%;
+            border: 5px solid #f00;
+        }
+            .res div{
+            float: none; /* html .res div에 float:left;가 있기때문에 해제해줌 */
+            width: 80%; height: 60vh;
+            border: 3px solid #00f;
+            box-sizing: border-box;
+            font-size: 5vw;
+            margin: 0 auto;
+        }
+        }
+
+        @media(max-width:480px){
+            width:100%
+        }
+    </style>
+
+
+</body>
+</html>

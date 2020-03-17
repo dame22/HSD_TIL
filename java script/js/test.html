@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+        document.write("<h1>1</h1>");
+            var i = 0;
+
+            while(i < 10){
+                i++; 
+                document.write(i + "/");                    
+            }
+            
+        
+        document.write("<h1>2</h1>");
+
+        var sum = 0;
+
+        for(i = 0; i <= 100; i++){
+                sum += i;                
+        }
+        document.write(sum);
+
+
+
+
+        document.write("<h1>3</h1>");
+
+        var arr = [10,50,60,80,70,60]; // index 값
+        var sum = 0;
+        var a = 0;
+        var b = 0;
+       
+       
+        
+        for(i = 0; i<arr.length; i++){
+            sum += arr[i];           
+            if(arr[i] > 60){
+                a++;                
+            }
+            else if(arr[i] < 70){
+                b++;
+            }
+            }
+
+        // for(var i in arr){ >> 배열 또는 객체 두 가지를 사용할 때 사용
+        //     sum += arr{i};
+        // }    
+
+        document.write(sum);
+        document.write("<br> 60 > "+a +"개");
+        document.write("<br> 70 < "+b +"개");
+        
+
+        document.write("<h1>4</h1>");
+
+        var arr = ['a','b','c','d']
+        var sum = 0;
+
+        for(i = 0; i<arr.length; i++){
+             sum++;
+        }
+        document.write(sum + "개")
+        
+
+        //================================================
+        document.write("<h3>★ 배열안에 배열값 넣기</h3>");
+
+        var arr = [10,50,60,80,70,60];
+        var min = []
+        var max = [/* 80,70 */];
+        
+        for(i = 0; i<arr.length; i++){
+            if (arr[i] > 60){
+                max.push(arr[i]); // max 의 빈 배열안에 arr의 배열값을 넣음
+            }
+            if(arr[i] < 70)
+                min.push(arr[i]);
+        }
+        document.write(max.length+"<br>"); // 배열 값의 길이 [80,70] - 2개
+        document.write(min);
+
+
+        //================================================
+        document.write("<h3>----------</h3>");
+
+        var arr = [10,50,60,80,70,60];
+        var min = 0;
+        var max = [/* 80,70 */];
+        var aa = 0;
+        
+        for(i = 0; i<arr.length; i++){
+            if (arr[i] > 60){
+                max.push(arr[i]); 
+            }
+            if(arr[i] < 70){
+                
+                if(arr[i] == aa){
+                    continue;
+                }
+                aa=arr[i];
+                min++;
+            }                
+                
+        }
+        document.write(min)
+        // 70보다 작은 수는 10 50 60 60 총 4개이나 60이 중복값이기 때문에 제외 하고 결과출력
+
+
+        
+       //================================================ 
+        document.write("<h3>----------</h3>");
+
+        var arr = [10,50,60,80,70,60];
+        var min = 0;
+        var max = [/* 80,70 */];
+        var aa = 0;
+        
+        for(i = 0; i<arr.length; i++){
+            if (arr[i] > 60){
+                max.push(arr[i]); 
+            }
+            if(arr[i] < 70){
+                min++;
+            }            
+                
+        }
+        document.write(min)
+
+        
+            
+        
+
+
+
+      
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

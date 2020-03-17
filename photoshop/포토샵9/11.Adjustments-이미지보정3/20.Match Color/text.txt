@@ -1,0 +1,13 @@
+*서로 다른 환경에서 찍은 사진의 강도나 색조를 통일할 때 사용한다.
+
+
+[Image]-[Adjustments]-[Match Color]
+
+
+<작업-오래된 사진 만들기>
+
+1.Match1.jpg , Match2.jpg를 선택하여 불러온다.
+2.Match2.jpg를 선택하고 [Image]-[Adjustments]-[Match Color]를 적용한다.
+3.Source를 'Match1.jpg'로 설정한 후 'OK'
+4.Match1.jpg 의 이미지 색상톤이 Match2.jpg 로 적용된 것을 볼 수 있다.
+

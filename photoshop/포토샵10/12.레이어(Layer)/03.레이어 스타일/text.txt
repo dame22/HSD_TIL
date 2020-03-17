@@ -1,0 +1,16 @@
+
+<작업-아쿠아 글자 만들기>
+
+1.가로문자툴을 선택한다.
+  -옵션바에서 글자체:'휴먼옛체', 크기:230, 색상:흰색
+  -'Water'를 입력한다.
+2.레이어 패널에서 Fill을 0으로 입력한다.
+3.글자 레이어를 더블 클릭해서 레이어 스타일 대화상자를 연다.
+  -Bevel & Emboss를 선택한다.
+    -Style은 'Inner Bevel', Depth:134 ,Size:13 ,Soften:2, Angle:146, 
+     Altitude:69, Shadow Mode:'Liner Dodge(Add)'에 흰색, Opacity:50으로 설정한다.
+  -Inner Shadow를 선택한다.
+    -Blend Mode의 색상을 '#357f8c', Distance:8, Size:9 로 설정한다.
+  -Drop Shadow를 선택한다.
+    -Blend Mode의 색상을 '#4a8a9b', Distance:10, Size:7, Contour:'Ring' 로 설정한다.
+4.'OK'를 클릭하여 아쿠아 문자를 만든다.

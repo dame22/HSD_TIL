@@ -1,0 +1,61 @@
+@import url('common.css');
+*{margin: 0 auto}
+body{ background:#f2f2f2;}
+/*--------------------------------*/
+
+
+.public{
+    width: 900px;
+    background: #fff;
+    margin: 100px auto;
+    padding: 60px;
+}
+
+.public h2{
+    font-size: 2em;color: #333;
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.public .p_all{border: 10px solid #333; padding:60px;
+                }
+
+.public .p_all h3{
+    font-size: 1.6em; text-align: center;
+    color: #333; padding-bottom: 20px;
+}
+
+.public .p_all h3 small{
+    display: block;
+    line-height: 3;
+}
+
+.public .p_all dl{}
+
+
+.public .p_all dl dd{
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    padding-left: 20px;
+}
+
+.public .p_all dl dd:nth-of-type(3){text-align: right; padding-right: 20px}
+
+.public .p_all dl dd input{border: none;}
+
+
+.public .p_all div {text-align: center;}
+
+/* .public .p_all input[type='submit']{} */
+.public .p_all div > input{
+                        background: #aaa;
+                        border: none;
+                        padding: 10px 30px;
+                        color: #fff;
+                        margin-top: 20px;
+                        }
+
+.public .p_all .member{position: relative; left:0; top: 0;}
+.public .p_all div span{text-decoration: underline; padding: 20px 5px 0px 5px}
+.public .p_all div span:nth-of-type(1):after{content:'';border: 1px solid #999; background: #f00; height: 10px; position: absolute; left: 43%; top: 60%;}
+

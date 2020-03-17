@@ -1,0 +1,24 @@
+
+<작업>
+
+1.새로 파일을 만든다
+  -width/height:50px , Background:Transparent(투명)
+
+2.color은 Default Color 선택(기본 검정색/흰색)
+
+3.브러시 사이즈를 35(그라디언트원) => 중앙 부분에 클릭
+4.브러시 설정 클릭 후 Assorted Brushes 선택 후 [Append] 추가
+  -추가된 브러시 중에서 'Crosshatch 4' (곱하기 모양) 선택 후 중앙에 클릭
+
+5.[Edit]-[Define Brush Preset] 클릭 (브러시 등록)
+
+6.야경 이미지를 불러온다.
+
+7.브러시 툴을 선택하고 옵션바에서 [Brush]패널을 연다
+  -Brush Tip Shape의 spacing:200
+  -Shape Dynamics에서 Size:100 , Mininum:25 , Angle:100
+
+8.불러온 이미지에 원하는 부분에 드래그해 별을 넣는다.
+
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        document.write("<h1>산술연산자</h1>")
+        var x = 10;
+        var y = 30;
+
+        document.write("x+y = " +(x+y));
+        document.write("<br>(x+y)/2 = " +(x+y)/2);
+        document.write("<br>(x+y)*2 = " +(x+y)*2);
+        document.write("<br>(x+y)%2 = " +(x+y)%2); // 2로 40을 나누면 나머지 값이 얼마인지
+        
+        document.write("<h1>증감연산자</h1>");
+        // x = 10, y = 30
+
+        document.write("<br>x++ =>"+(x++)); /* 앞에 ++ 입력시 증감된 숫자가 표시되고, 
+                                                뒤에 ++ 입력 시 증감되기 전 숫자 표시 */
+        document.write("<br>x++ =>"+(x++));
+        document.write("<br>x++ =>"+(x));
+
+        document.write("<br>x++ =>"+(x--)); 
+        document.write("<br>x++ =>"+(x--));
+        document.write("<br>x++ =>"+(x));
+        
+        var a = 50, b = 3, c = 6, d = 10;
+        document.write("<br>(a + b++ + c++ + ++d) =>" + (a + b++ + c++ + ++d)); // 70
+                                       // 50 + 3 + 6 + 11 
+        document.write("<br>(a + b + c + d) =>" + (a + b + c + d)); // 72
+                                        // 50 + 4 + 7 + 11 >> 3과 6이 후에 증감이 되기 때문에 값이 72가됨
+        
+
+
+
+        document.write("<h1>비교연산자</h1>");
+        var a = 10, b = 20;
+        var c = a < b;
+
+        document.write("<br>(10 < 20)" + (a < b));
+        document.write("<br>(10 > 20)" + (a > b));
+        document.write("<br>(10 != 20)" + (a != b));
+        document.write("<br>(10 == 20)" + (a === b));
+        document.write("<br>(10 == 20)" + (a !== b));
+
+        var a = 10, b = '10'; 
+        document.write("<br>(10 == '10')" + (a == b)); // 문자열, 숫자열 내용만 같아도 값을 true로 표시됨
+        document.write("<br>(10 === '10')" + (a === b)); // 내용의 넘버, 스트링이 다르기 때문에 false 표시
+
+        document.write("<h1>논리연산자</h1>")
+        document.write("<br>" + (10 == 10 && 10 < 20)); // && 양쪽의 조건이 값이 맞을 때
+        //                         true && true  >> true
+        document.write("<br>" + (10 == 11 && 10 < 20));
+        //                          false && true >> false
+        document.write("<br>" + (10 == 11 || 10 < 20)); // ||양쪽의 조건이 값이 틀릴 때 or 값이 하나만 맞을 때
+        //                          false || true >> true
+        document.write("<br>" + (10 == 10 || 10 < 20));
+        //                          true || true >> true  
+
+
+        document.write("<h1>연습문제</h1>");
+        
+        var kor = 80, eng = 70;
+
+       // 홍길동님의 총점 : 80 / 평균 : 70점
+        document.write("홍길동님의 총점 : " + kor + " / " + "평균 : " + eng + "점");
+        
+        document.write("<br> 홍길동님의 총점 : " + (kor + eng) +  " / " + "평균 : " + (kor+eng)/2 + "점")
+        
+        var hong = [80,70];
+        //          0 , 1 > 자리번호
+
+        document.write("<br> 홍길동님의 총점 : " + hong[0] + " / 평균 : " + hong[1] + "점");
+        document.write("<br> 홍길동님의 총점 : " + (hong[0] + hong[1]));
+        
+        var hong = {kor:80,eng:70};
+        var sum = hong.kor + hong.eng,
+            avg = sum/2;
+
+        document.write("<br> 홍길동님의 총점 : " + sum + " / 평균 : " + avg + "점");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

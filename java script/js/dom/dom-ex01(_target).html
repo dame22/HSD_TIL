@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <aticle class="ex3">
+        <h2> DOM - 데이터 값 변경</h2>
+    
+        <div class="box">
+            <input type="text" list="src-txt">
+    
+            <datalist id="src-txt">
+                <option>img-01.jpg</option>
+                <option>img-02.jpg</option>
+                <option>img-03.jpg</option>            
+            </datalist>
+
+            <select>
+                <option>선모양 선택</option>
+                <option value="dotted">-----------</option>
+                <option value="dashed">ㅡㅡㅡㅡㅡㅡ</option>
+                <option  value="double">===========</option>
+            </select>
+
+            <input type="button" value="변경3">        
+        </div>
+    
+        <div>
+            <img src="img/img-01.jpg" class="img">
+        </div>
+    </aticle>
+    
+    
+<!----------------------------ex2------------------------->
+
+    <aticle class="ex2">
+        <h2> DOM - 데이터 값 변경</h2>
+    
+        <div class="box">
+            <input type="text" list="src-txt">
+    
+            <datalist id="src-txt">
+                <option>img-01.jpg</option>
+                <option>img-02.jpg</option>
+                <option>img-03.jpg</option>            
+            </datalist>
+    
+            <input type="button" value="변경2">        
+        </div>
+    
+        <div>
+            <img src="img/img-01.jpg" class="img">
+        </div>
+    </aticle>
+    
+    
+<!----------------------------ex------------------------->
+
+
+<aticle class="ex">
+    <h2> DOM - 데이터 값 변경</h2>
+
+    <div>
+        <input class="img-src" type="text" list="src-txt">
+
+        <datalist id="src-txt"> <!-- input(↑)과 연결시켜줌-->
+            <option>img-01.jpg</option>
+            <option>img-02.jpg</option>
+            <option>img-03.jpg</option>            
+        </datalist>
+
+        <input class="change-btn" type="button" value="변경">        
+    </div>
+
+    <div>
+        <img src="img/img-01.jpg" class="img">
+    </div>
+</aticle>
+
+
+<!--========================▼ script ▼===============================-->
+
+    <script>
+
+var ex3 = document.querySelector('.ex3');
+        
+        ex3.onclick = function(){
+            var target = event.target;
+            
+            if(target.type != 'button') return;   
+
+        var img = ex3.querySelector('.img');
+        var box = ex3.querySelector('.box');
+
+        img.src = "img/"+box.children[0].value;
+        img.style.borderStyle = box.children[2].value;
+    }
+
+
+
+
+// ex2 =====================================
+
+
+        var ex2 = document.querySelector('.ex2');
+        
+            ex2.onclick = function(){
+                var target = event.target;  // 클릭하는 대상자를 찾음
+                
+                if(target.type != 'button') return;
+                /*  if(target.type != 'button') {
+                            return
+                    } >> 같은내용
+                클릭한 대상자의 타입과 button이 같지 않을경우 수행없이 return함 */
+
+            var img = ex2.querySelector('.img');
+            var box = ex2.querySelector('.box');
+            /* var inputSrc = box.children[0].value || box.children >> box 태그안에 들어있는 자식태그들
+                    배열[]의 형태로 불러올 수 있음 */
+            img.src = "img/"+box.children[0].value;
+        }
+
+
+
+
+// ex =====================================
+
+        var ex1 = document.querySelector('.ex');
+        
+        var changeBtn = ex1.querySelector('.change-btn');
+        // document. 대신 ex1 입력 // 부모안에 있는 요소에만 script 적용 (css 개념)
+        changeBtn.onclick = function(){
+            var imgSrc = ex1.querySelector('.img-src');
+            var img = ex1.querySelector('.img');
+
+            img.src = "img/"+imgSrc.value; // img의 src를 input 값에 넣음
+        } //img 폴더안에 있는 img 파일이기 때문에 경로명을 붙여줘야함
+
+
+
+    </script>
+</body>
+</html>

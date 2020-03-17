@@ -1,0 +1,16 @@
+*이미지를 그레이디언트 색상만으로 표현한다.
+ 첫번째 Color Stop은 가장 어두운 영역, 마지막 Color Stop은 가장 밝은 영역을 나타낸다.
+
+
+[Image]-[Adjustments]-[Gradient Map]
+
+Dither :색을 부드럽게 만든다.
+Reverse :색을 반전한다.
+
+<작업>
+
+1.[Image]-[Adjustments]-[Gradient Map]
+  -전경색과 배경색으로 일단 적용된다.
+2.콤보 버튼을 클릭해서 'Volet, Green, Orange'를 선택한다.
+  (색을 임의로 만들어서 적용해 본다.
+)

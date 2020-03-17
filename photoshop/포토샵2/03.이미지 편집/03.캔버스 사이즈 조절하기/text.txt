@@ -1,0 +1,6 @@
+<작업>
+1.배경을 흰색으로 설정
+2.[Image]-[Canvas Size] (Alt+Ctrl+C)
+  -width:820 , Anchor:오른쪽 가운데 중심점 선택 , 
+  -Canvas extension color:Background 로 설정
+3.레이어 추가후 라벨이미지를 연후 이동툴을 사용해서 드래그

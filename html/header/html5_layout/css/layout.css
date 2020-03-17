@@ -1,0 +1,45 @@
+@import url('common.css');
+
+/*----------------------------------*/
+
+header{}
+header nav{}
+header nav a{}
+
+section{
+    background: #eee;
+}
+section article{
+    width: 1200px; margin: 0 auto;
+    padding: 100px 0;
+}
+section article h2{}
+section article ul{
+    display: flex;
+}
+section article ul li {}
+section article ul li img{
+    width: 100%;
+}
+
+footer{text-align: center;}
+footer nav{width: 1200px; margin: 0 auto;}
+footer nav a{}
+footer p{}
+
+aside{
+    width: 200px;
+    position: absolute;
+    left: calc(50% + 600px); top: 100px;
+    background: #00f;
+}
+
+section article ul li figure{}
+section article ul li figure figcaption{
+    visibility: hidden;
+} /*태그가 존재하나 내용만 숨김 > 공간확보됨 (dispaly:none > 태그 자체를 숨김, 공간확보X)*/
+
+section article ul li figure:hover figcaption{visibility: visible}
+
+
+

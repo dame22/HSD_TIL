@@ -1,0 +1,13 @@
+*카메라의 색감과 색 온도를 보정하는 기본 필터이다.
+
+[Image]-[Adjustments]-[Photo Filter]
+
+Filter :필터의 종류를 선택한다.
+Color :필터에 넣을 색을 설정한다.
+Density :색의 농도를 조절한다.
+Preserve Luminosity: 체크를 하면 그림자의 명암을 유지하면서 색을 입힌다.
+
+<작업>
+
+1.[Image]-[Adjustments]-[Photo Filter]를 적용한다.
+2.Density:100 (다른 값들도 조절해 본다.)

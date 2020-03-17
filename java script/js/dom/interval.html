@@ -1,0 +1,40 @@
+
+<style>
+    .elm{
+        width:100px; height: 100px;
+        background:#000;
+        position: absolute; left: 0;
+    }
+
+</style>
+
+<div class="elm"></div> 
+
+<script>
+// setInterval(function(){ 실행 명령 }, 반복할 시간 )
+
+    var idx = 0;
+    var elm = document.querySelector('.elm');
+    var elmWid = Math.min(elm.offsetWidth,elm.scrollWidth)
+
+    window.innerWidth - elmWid
+    //window.innerWidth
+    //elm.offsetWidth
+    //elm.scrollWidth
+    //Math.min( , ) >> 입력한 두 값중 제일 작은 값을 찾음 || Math.max(,) >> 큰 값
+
+    var inter = setInterval(function(){
+        idx++;
+        elm.style.left = idx + 'px';
+        elm.style.top = idx + 'px';
+
+        if(idx > window.innerHeight - elmWid){
+            clearInterval(inter);
+        }
+        
+
+    }, 0);
+
+    
+
+</script>

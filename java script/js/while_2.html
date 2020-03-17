@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// continue; >> 만나는 순간 조건(while)으로 올라감, 아래의 if는 건너뜀
+// break; >> 중지
+
+document.write("<h1> 5+10+15+20,,5의 배수 합 </h1>");
+    
+var num = 0;
+var sum = 0;
+    
+    while(++num <= 100){
+        
+        if(num%2 == 0){
+            continue;
+        }
+        if(num >= 50){
+            break;
+        }
+        document.write(num+'/');
+        if(num%10 == 0){
+            document.write("<br>")  
+        }
+
+    }
+
+
+//========================(while안에 while)=============================
+
+
+document.write("<h1> 구구단 </h1>");
+
+    var guNum = 2;
+    var i = 0;
+    var guResult = 0;
+    
+document.write("<table><tr>")
+while(guNum <= 9){    
+    document.write("<td>")
+    while(++i <= 9){
+        
+        guResult = guNum * i
+        document.write("<br>" + guNum + "x" + i + "=" + guResult);
+    
+    }
+    i = 0; // 두 번째 while에서 i값이 9가되면 더이상 돌지 않기 때문에 값을 0으로 초기화 해야함
+    guNum++;
+    document.write("</td>")
+}
+document.write("</tr></table>")
+
+
+    </script>
+
+
+
+</body>
+</html>

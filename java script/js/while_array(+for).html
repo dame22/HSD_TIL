@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+document.write("<h1>배열선언</h1>")
+//          0  1  2  3  4
+var arr = [10,20,80,40,70];
+var i = 0;
+var sum = 0 ;
+
+while(i < arr.length){ // arr.length >> arr 에 선언된 값의 길이 (선언된 값이 5개 이므로 arr.length값은 5)
+    //document.write(arr[i]+"<br>");
+    sum += arr[i];
+    i++;   
+}
+document.write(sum);
+
+
+/*====================for(초기문;조건문;증감문){
+
+                    (조건문->) 반복할 명령 (-> 증감문} =====================*/
+
+    
+document.write("<h1>for 반복문</h1>")
+
+
+for (var i = 0; i < 3; i++){
+//    초기문;   조건문; 증감문
+    document.write( i );
+    // while 동일 (continue, break)
+}
+
+
+
+//================================================================
+
+
+document.write("<h1>for문과 배열</h1>")
+
+var arr = [10,20,80,40,70];
+var sum = 0;
+var avg = 0;
+
+for(var i=0; i<arr.length; i++){
+    sum += arr[i];
+    avg = sum/5
+        
+}
+ document.write("총점 : " + sum + " / 평균 : " + avg);
+//총점:220 / 평균: 값 구하기
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

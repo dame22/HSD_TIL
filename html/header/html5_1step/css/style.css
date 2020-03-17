@@ -1,0 +1,66 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Kalam&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Caveat|Kalam&display=swap');
+
+/*----------------------------------------*/
+
+body{width: 75%; margin: 0 auto;}
+
+header{width: 100%; position: relative; justify-content: center}
+
+h1{margin: 40px 0 40px 80px}
+
+nav{position: absolute; right: 100px; top:0;}
+
+nav a{ text-transform: uppercase; font-weight: bold; font-size: 12px; margin-left: 30px}
+
+nav a:after{content: '';display: block; width: 0; height: 2px; background:#10c9c3;
+                margin-left: 50%; transition:.5s}
+
+nav a:hover:after { width: 100%; margin-left: 0%}
+
+
+
+nav a:hover {color: #10c9c3}
+
+
+
+
+section{}
+
+
+/* 비쥬얼 */
+article {background: #f6f6f6; height: 315px; text-align: center;}
+article h2 {font-size: 38px; padding-top: 110px;font-family: 'Caveat', cursive;;}
+article p{font-size: 18px;font-family: 'Kalam', cursive;}
+
+
+
+/* 본문 */
+section ul{width: 100%; height: 900px}
+section ul li{background: #838383; width: 25%; height: 300px;float: left }
+section ul li:nth-of-type(2n+1):nth-of-type(-n+4){background: #ddd;}
+section ul li:nth-of-type(2n+6):nth-of-type(-n+8){background:#ddd;}
+section ul li:nth-of-type(2n+9):nth-of-type(-n+12){background:#ddd;}
+
+section ul li:after{content: ''; display: block; width: 100%; height: 100%;
+        background:rgba(33,195,185,1) url('../img/hover.png') center no-repeat; opacity: 0;
+       }
+
+
+section ul li:hover:after{opacity: 1;}
+
+footer{clear: both; background: #000; padding: 100px;}
+
+footer p {display: flex; justify-content: center;}
+
+footer strong{color: #fff;}
+
+
+
+/* flex-direction:column; 입력시 
+justify-content:contet; (가로) <-> align-items:center; (세로) 서로의 효과가 뒤바뀜 */
+
+
+
+

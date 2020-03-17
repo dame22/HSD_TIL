@@ -1,0 +1,39 @@
+*{margin: 0;padding: 0}
+
+/* 레이아웃 */
+
+.total_div{width: 994px; border: 1px solid red; margin: 0 auto}
+
+.header{}
+
+.left_all{width: 221px; float: left}
+.left_all .left1{}
+.left_all .left2{}
+.left_all .left3{}
+
+.con_all{overflow: hidden}
+
+.con_all .contop{overflow: hidden}
+.con_all .con1{width: 365px;float: left}
+.con_all .con2{width: 408px; float: right}
+
+.con_all .con_left{width: 365px;overflow: hidden;float: left}
+.con_all .con_left1{}
+.con_all .con_left2{}
+.con_all .con_left3{}
+
+.con_all .con_right {width: 408px; float: right}
+
+.footer{overflow: hidden}
+.footer .footer1{width: 100px; float: left}
+.footer .footer2{width: 894px; float: right}
+
+
+
+
+
+
+
+
+
+

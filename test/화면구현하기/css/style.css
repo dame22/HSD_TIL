@@ -1,0 +1,245 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Caveat&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+/*-----------------------------------*/
+
+.wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.wrap header{
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 315px;
+    height: 960px;
+    background: url(../img/img_visual.jpg) no-repeat}
+
+.wrap header h1{
+    color: #eec53e;
+    font-size: 35px;
+    font-family: 'Caveat', cursive;
+    
+}
+
+.wrap nav{}
+.wrap nav a{
+    font-size: 19px;
+    margin-left: 60px;
+    color: #fff;
+    font-weight: bold;
+    z-index: 10;
+ }
+
+
+
+
+
+ /*---------------------------------------*/
+
+.wrap section{
+
+}
+.wrap section article{
+    position: absolute; left: 17%;top: 5%;
+    height: 960px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+.wrap section article h2{
+    font-size: 55px;
+    color: #fff;
+    font-family: 'Varela Round', sans-serif;
+    animation: h2 1s;
+}
+
+@keyframes h2{
+    20%{color: #00f}
+    50%{color:#0f0}
+    80%{font-size: 5em;color: #f00}
+    100%{opacity: 1;}
+
+ }
+
+
+.wrap section article h2 strong{
+    font-size: 102px;
+    color: #fff;
+    display: block;
+    margin-top: 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.wrap article a{
+    width: 330px; height: 90px;
+    background: #fed136; color: #fff;
+    font-size: 25px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-top: 30px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+
+/*-----------------------------------------*/
+
+.wrap section .con_1{
+    height: 1670px;
+    background: #f7f7f7;
+
+}
+.wrap section .con_1 h3{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 170px 0 100px 0;
+    font-family: 'Varela Round', sans-serif;
+    animation: h3 .5s
+}
+
+
+
+@keyframes h3{
+    0% {transform: translate(-80%)}
+}
+
+
+
+
+.wrap section .con_1 h3 strong{
+    font-size: 55px;
+    color: #333;
+    font-family: 'Varela Round', sans-serif;
+    
+}
+.wrap section .con_1 h3 span{
+    font-size: 22px;
+    color:#999;
+    margin-top: 30px
+}
+
+.wrap section .con_1 ul{
+    padding: 0 315px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap:wrap;
+}
+.wrap section .con_1 ul li{
+   margin: 30px 0;
+}
+
+.wrap section .con_1 ul li a{
+    width: 400px; height: 410px;
+    overflow: hidden;
+    position: relative;
+}
+.wrap section .con_1 ul li a img{
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+.wrap section .con_1 ul li a:hover{
+    transform: scale(1.6) 
+}
+
+.wrap section .con_1 ul li p{
+    width: 400px; height: 130px;
+    background: #fff;
+    margin-top: -5px;
+    color: #333; font-weight: blod;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    font-family: 'Varela Round', sans-serif;
+}
+.wrap section .con_1 ul li p span{
+    font-size: 20px;
+    color:#999;
+    font-family: 'Varela Round', sans-serif;
+}
+
+/*---------------------------------------------*/
+
+.wrap section .con_2{
+    padding: 60px 315px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap section .con_2 img{
+    margin-left: 50px;
+}
+
+/*------------------------------------------------*/
+
+.wrap section .con_3{
+    height: 570px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap;
+    padding: 0 440px;
+
+}
+
+.wrap section .con_3 p{
+    font-size:55px;
+    color: #fff;
+    padding-top: 100px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.wrap section .con_3 p span{
+    font-size: 22px;
+    color: #777;
+    display: block;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.wrap section .con_3 input{
+    border-radius: 5px;
+    border: none;
+    margin-left: 30px;
+    font-weight: bold;
+    margin-bottom: 100px;
+    font-family: 'Varela Round', sans-serif;
+}
+
+.wrap section .con_3 input:nth-of-type(1){
+    width: 630px; height: 70px;
+    font-size: 25px; color: #bbb;
+    padding-left: 30px;
+}
+
+.wrap section .con_3 input:nth-of-type(2){
+    width: 330px; height: 70px;
+    background: #fed136; color: #fff;
+    font-size: 25px;
+}
+
+
+/*------------------------------------*/
+
+.wrap footer{
+    height: 230px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.wrap footer p{
+    font-size: 22px;
+    color: #999;
+}
+

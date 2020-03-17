@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+    document.write("<h1>while 1~100 짝수의 합을 구하라</h1>");
+    
+
+    var num = 1;
+    var sum = null; // 값이없음
+    while(num < 100){
+        num++;
+
+        if(num%2 == 0){ // 짝수 구하기
+        //  sum = sum + num; 저장소 = 저장소 + 짝수값
+            sum += num; // 기존값에 짝수의 값을 더해서 대입을 함
+        }
+
+    }
+    document.write(sum + "<br>");
+
+    // ========================================================
+
+    document.write("<h1>while 1~100 홀수의 갯수를 구하라</h1>");
+
+
+    var num = 0;
+    var hole = 0;
+    
+    while(num < 100){
+        num++;
+
+        if(num%2 != 0){ // num%2 = 1 홀수 구하기
+            hole = hole + 1
+            
+            // hole++  >> 같은 답
+            // hole += 1 >> 같은 답
+        }
+
+    }
+    document.write(hole + "<br>");
+
+
+    //==================================================
+
+    document.write("<h1>while 1~100에서 369를 구하라</h1>");
+
+
+   
+    var num = 1;
+    
+    while(num <= 100){
+        num++;
+        
+        if(num % 10 == 3 || num % 10 == 6 || num % 10 == 9){
+            document.write(num + " / ")
+        }
+    
+    }
+
+    
+
+    //=====================================================
+
+    document.write("<h1>while 1~100</h1>");
+
+
+    var num = 0;
+    
+    while(num < 100){
+        num++;
+        document.write(num + " / ")
+    
+    }
+
+//=====================================================
+
+document.write("<h1>while 1~100..1/*/3/*/5..</h1>");
+
+ 
+var num = 0;  
+
+while (num <= 100){
+    num++;
+ if(num % 2 !== 0){
+    document.write(num);
+}else{
+    document.write(" / * / ");
+}
+}   
+    
+
+//=====================================================
+
+document.write("<h1> while 1~100..3 6 9만 * 처리 </h1>");
+
+var num = 0;
+
+while(num < 100){
+    num++;
+    if((num % 10) % 3 == 0 && num % 10 !== 0 ){
+        document.write("*/");
+    } else{
+        document.write(num+"/");
+    }
+     if(num % 10 == 0){
+        document.write("<br>");}
+    }
+
+    
+    /*
+    1%10 = 1 % 3 = 1
+    2%10 = 2 % 3 = 2
+    3%10 = 3 % 3 = 0
+    4%10 = 4 % 3 = 1
+    5%10 = 0 % 3 = 0
+    6%10 = 4 % 3 = 1
+   
+    10%10 = 0 % 3 = 0
+    11%10 = 1 % 3 = 1
+    12%10 = 2 % 3 = 2
+    13%10 = 3 % 3 = 0
+    14%10 = 4 % 3 = 1
+    15%10 = 5 % 3 = 2
+    16%10 = 6 % 3 = 0
+    */
+
+//=====================================================
+
+    document.write("<h1> 10+20+30+40+50+60+70+80+90+100 </h1>");
+
+    var num = 0;
+    var sum = 0;
+
+    while(num <= 100){
+        num ++;
+    if(num % 10 == 0){
+        sum += num; // >> sum = sum + num        
+    }
+    }
+    document.write("<br>" + sum);
+
+
+
+
+    document.write("<h1> 5+10+15+20,,5의 배수 합 </h1>");
+
+    var num = 0;
+    var sum = 0;
+
+    while(num <= 100){
+        num ++;
+    if(num % 5 == 0){
+        sum += num;
+    }
+    }
+    document.write(sum)
+
+
+    document.write("<h1> 홀수의 합 </h1>");
+
+    var num = 0;
+    var hole = 0;
+    
+    while(num <= 100){
+        num++;
+        if(num % 2 == 1){
+            hole += num;   
+        }
+
+    }
+    document.write(hole);
+
+
+
+
+
+    </script>
+
+
+</body>
+</html>

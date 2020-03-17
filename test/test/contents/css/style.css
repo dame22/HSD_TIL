@@ -1,0 +1,30 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+/*--------------------------------------*/
+
+body{width: 100%; margin: 0 auto; background: #ede0df;
+    padding: 5%}
+
+.wrap div{width: 465px; height: 790px; background: transparent; 
+        ;position: relative; overflow: hidden; margin: 0 auto}
+
+.wrap div a img{position: absolute;left: -50px; top: 0;}
+
+.wrap p{position: absolute; left: 28%; bottom: 20%; display: flex; flex-direction: column;}
+.wrap p span{font-family:'Playfair Display', serif;}
+.wrap p span:nth-of-type(1){font-size: 83px;margin-bottom: 80px}
+.wrap p span:nth-of-type(2){font-size: 12px;white-space:pre-line;}
+
+
+.wrap ul{position: absolute; right: 25%; top: 50%;}
+
+.wrap ul li{font-size: 12px;margin-bottom: 35px;font-family:'Playfair Display', serif; transition:.5s;}
+
+.wrap ul li:after{content: ''; display: block; width: 1px; height: 0px; background: #000;
+transition: .5s;}
+
+.wrap ul li:hover:after{height: 50px;}
+
+.wrap ul li:hover{font-size: 2.5em;}
+
+

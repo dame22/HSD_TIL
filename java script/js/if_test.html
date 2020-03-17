@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+    document.write("<h1>ex01-if 조건문 활용</h1>")
+
+
+    var a = prompt('나이는?');
+        b = prompt('좋아하는 술은? (소주, 맥주, 소맥 중..)');
+        c = prompt('이유는?');
+
+
+        if(a >= 20 && b == "소주"){
+            document.write(c + " 라는 이유라니.. 저도 " + b + "를 좋아하는 편이에요 ")
+        }else if(a >= 220 && b == "맥주"){
+            document.write(c + " 라는 이유라니..저는 " + b + " 가볍게 마시고 싶을 때만 찾아요")
+        }
+         else if(a >= 20 && b == "소맥"){
+            document.write(c + " 라는 이유라니.." + b + "을 좋아하는걸 보니 주당이네요!")
+         }else{
+             alert("미성년자 또는 예시에 없는 주류를 입력했습니다.")
+         }
+
+
+
+
+
+</script>
+
+</body>
+</html>

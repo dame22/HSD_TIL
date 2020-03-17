@@ -1,0 +1,15 @@
+*이미지의 색상을 제거한다.
+
+[Image]-[Adjustments]-[Desaturate]  (Ctrl+Shift+U)
+
+
+<작업-오래된 사진 만들기>
+
+1.[Image]-[Adjustments]-[Desaturate]  => 이미지가 흑백으로 바뀐다.
+2.[Filter]-[Filter Gallery]를 클릭한다.
+  -Texture에서 'Grain'을 클릭한다.
+  -intensity:12 , Contrast:15, type:vertical
+ 
+
+
+

@@ -1,0 +1,8 @@
+<작업>
+
+1.마술봉툴을 사용해서 하늘배경 부분을 선택
+  -옵션바에서 Add Selection 선택
+  -Tolerance:50 (색상의 허용범위 0~255)
+
+2.[image]-[Adjustment]-[Hue/Saturation]
+   -Hue:180

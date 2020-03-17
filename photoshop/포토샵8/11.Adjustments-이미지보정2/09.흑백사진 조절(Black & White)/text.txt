@@ -1,0 +1,18 @@
+*컬러 이미지를 흑백으로 만들거나 모노 톤으로 만들때 사용한다.
+ Desaturation에서는 조절할 수 없는 색상별 흑백 명암을 조절할 수 있다.
+
+[Image]-[Adjustments]-[Black&White] (Alt+Ctrl+Shift+B)
+
+
+Tint: 체크를 하면 모노 톤의 이미지를 만든다.
+      (Hue/Saturation의 Colorize에 체크를 한 것과 비슷한 효과를 만든다)
+Auto: 자동으로 설정된 흑백 이미지로 조절된다.
+색상바 : 각 색상별로 명암을 조절한다.
+
+
+<작업>
+
+1.[Image]-[Adjustments]-[Black&White]를 적용하면 이미지가 흑백 톤으로 바뀐다.
+2.Reds:250 (빨간색 계열이 밝아진다)
+3.Blue:-100 (파란색 계열이 어두워진다)
+4.Tint를 체크한다. (이미지가 모노 톤으로 바뀐다.)

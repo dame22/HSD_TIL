@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        //fadeOut :: 서서히 사라짐 >> display:block, opacity:0
+        //fadeIn :: 서서히 나타남 >> display:none, opacity:1
+        //mouseover :: hover가 
+        //mouseenter ::  - 권장
+        //mouseout ::
+        //mouseleave :: - 권장
+        
+
+    $(function(){
+        $('.fade img').not(':first').hide(); // not(':first') :: 첫 번째를 제외한다
+
+        var idx = 0, inter;
+        function loop(){
+            inter = setInterval(function(){
+            
+                $('.fade img').eq(idx).fadeOut(1000);
+                idx++;
+                if(idx == 3){idx = 0;}
+                $('.fade img').eq(idx).fadeIn(1000);
+         
+            // console.log(idx)
+        },1000)
+
+        }
+        loop();
+
+        $('.fade').on('mouseenter',function(){
+            clearInterval(inter);
+        })
+        $('.fade').on('mouseleave',function(){
+            loop();
+        })
+
+        
+           
+    });
+     
+      
+  
+    </script>
+</head>
+<body>
+
+<div class="fade">
+    <img src="../img/img-01.jpg" alt="">
+    <img src="../img/img-02.jpg" alt="">
+    <img src="../img/img-03.jpg" alt="">
+</div>
+
+
+<style>
+    img{
+        width: 600px; height: 400px;
+        position: absolute;
+        left: 0; top: 0;
+    }
+</style>
+
+    
+
+
+    
+</body>
+</html>

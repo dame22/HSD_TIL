@@ -11,7 +11,7 @@
 <div class="elm"></div> 
 
 <script>
-// setInterval(function(){ 실행 명령 }, 반복할 시간 )
+// setInterval(function(){ 실행 명령 }, 반복할 시간 ) :: 일정한 시간 간격으로 작업을 수행
 
     var idx = 0;
     var elm = document.querySelector('.elm');
@@ -19,8 +19,8 @@
 
     window.innerWidth - elmWid
     //window.innerWidth
-    //elm.offsetWidth
-    //elm.scrollWidth
+    //elm.offsetWidth :: 엘리먼트의 패딩과 보더, 스크롤바의 사이즈를 포함한 값
+    //elm.scrollWidth :: 전체 스크롤바를 사용하게 되어 숨겨진 영역까지 포함한 크기
     //Math.min( , ) >> 입력한 두 값중 제일 작은 값을 찾음 || Math.max(,) >> 큰 값
 
     var inter = setInterval(function(){

@@ -46,8 +46,8 @@
     
     nav.addEventListener('click',function(e){
         e.preventDefault(); // a태그일 때 많이 씀 || href 속성을 차단시킴
-        var id = e.target.dataset.id;
-        var con = eval('con' + id); // eval : string > object로 변경해줌
+        var id = e.target.dataset.id; //0, 1, 2
+        var con = eval('con' + id); // eval :: string > object로 변경해줌
          // console.log(typeof con) >> string
        
         var inter = setInterval(function(){
@@ -75,7 +75,7 @@
 
         
     })
-  // window.scrollTo(0,con.offsetTop); >> scrollTo : 스크롤이 움직이는것, 지정된 위치로 스크롤함 
+        //window.scrollTo(0,con.offsetTop); >> scrollTo : 스크롤이 움직이는것, 지정된 위치로 스크롤함 
         //console.log(con2.offsetTop) >> offsetTop : 컨텐츠의 시작지점
         //window.scrollY >> 스크롤을 얼마나 내렸는지 알 수 있음
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+       // each :: 선택자의 개수 만큼 구문 실행,,img들의 index 값도 가져옴
+       // delay :: fade / animate 앞에 쓸 수 있음
+       // append :: each 태그안 마지막 부분에 넣음
+       // attr(a) / attr(a,b) :: 속성의 a 값을 줌 / a 값을 b로 변경 
+
+    $(function(){
+        var imgArry = ['../img/img-04.jpg','../img/img-05.jpg'];
+        var tag = "<img src=" + imgArry[0] +">"
+            tag += "<img src=" + imgArry[1] +">"
+            // 할당 연산자를 사용함으로써 값을 바꾸지 않고 추가함
+
+        $('.each').append(tag);
+
+        $('.each img').each(function(i){
+            $(this).delay(500*i).fadeIn(); //fade의 display:block 속성 때문에 가로로 나열된 이미지가 세로로 떨어짐
+        });
+
+        $('.pop').hide();
+
+        $('.each img').on('click',function(){
+            var src = $(this).attr('src'); // img의 src 주소값
+          
+            $('.pop img').attr('src',src); // .pop img의 src 주소를 .each img의 src로 변경
+            $('.pop').fadeIn();            
+            
+        });
+
+        $('.pop').on('click',function(){
+            $('.pop').fadeOut();
+        });
+
+
+           
+    });
+     
+      
+  
+    </script>
+</head>
+<body>
+
+<div class="each">
+    <img src="../img/img-01.jpg" alt="">
+    <img src="../img/img-02.jpg" alt="">
+    <img src="../img/img-03.jpg" alt="">
+</div>
+
+<div class="pop">
+    <img src=''>
+</div>
+
+
+<style>
+    /* .each{
+        display: flex;
+        } fadein으로인해 세로로 나열된 이미지를 가로로 맹금,, */
+
+    img{
+        width: 300px; height: 200px;
+        display: none; 
+    }
+
+    .pop{
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        position: fixed; left: 0; top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .pop img{
+        display: block;
+    }
+</style>
+
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        // 단위를 입력하지 않을경우 자동으로 px
+        // $('button').eq(1).on >> eq() 순번을 가르킴 :: = nth-of-type()
+        // marginLeft : '+=50' >> 할당연산자 입력시 ''/"" 입력
+        // var $this =  $(this).index() >> this 의 순번을 가져옴
+        // animate를 사용할 때 css에 transition을 사용 하지 않는다. :: 값이 계속 바뀌어야할 때
+        // 값이 지정되어있을 때 css로 준비해놓고 toggle 사용
+
+    $(function(){
+            $('.box').css({
+                width:100,
+                height:100,
+                background: 'rgb(255, 215, 0)'
+            });
+
+            var count = 0;
+            $('.basic button').on('click',function(){
+               var $this =  $(this).index()
+
+                if($this == 0){
+                    count +=50
+                    
+                }else{
+                    count -=50
+                } 
+
+                $('.box').animate({
+                    marginLeft : count
+                },700);
+            });
+
+            $('.btn button').on('click',function(){
+                /*
+                var leftCalc = 0;
+                var txt = '닫기';*/
+
+                // var aaa = $('.btn button').text(); // text에 적인 내용을 가져올 수 있음
+
+                // if(aaa == '닫기'){
+                //     leftCalc = -600;
+                //     txt = '메뉴'
+                //  }//else{
+                //     leftCalc = 0;
+                //     txt = '닫기';                    
+                // } >> var 선언시 값과 동일하기 때문에 else 입력하지 않아도됨
+
+               /*
+                $(this).toggleClass('active');
+                // $(this).hasClass('active') >> active class를 가지고 있는지 판단 (true/false 값)
+                // (!$(this).hasClass('active') >> !로인해 부정의 의미가 됨 > 가지고 있지 않을 때
+                if(!$(this).hasClass('active')){
+                    leftCalc = -600;
+                    txt = '메뉴'
+                }
+
+
+                $('.nav').animate({
+                    left : leftCalc
+                },700,function(){
+                    $('.btn button').text(txt);
+                    // $('.nav').animate({
+                    //     left : -600
+                    // })
+                });
+                */
+                $('.btn').toggleClass('active');
+            });
+
+    });
+     
+      
+  
+    </script>
+</head>
+<body>
+
+<div class="basic">
+    <button> 우측 </button>
+    <button> 좌측 </button> 
+
+    <div class="box"> 콘텐츠 </div>
+</div>
+
+<div class="btn">
+    <button> 우측 </button>
+    <div class="nav"> 네비게이션 </div>
+
+    <style>
+        .btn{
+            margin:100px;
+            position: relative;
+        }
+        .btn.active .nav{
+            left: 0;
+        }
+        .nav{
+            background: rgb(15, 100, 58); color: #fff;
+            padding: 100px;
+            display: inline-block;
+            position: absolute; left: -600px; top: 50px;
+            transition: 2s;
+        }
+       
+    </style>
+</div>
+    
+
+
+    
+</body>
+</html>

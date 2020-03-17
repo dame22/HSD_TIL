@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+    // width :: 컨텐츠의 넓이
+    // innerWidth :: padding을 포함한 넓이
+    // outerWidth :: border을 포함한 넓이
+    // outerWidth(true) :: margin을 포함한 넓이
+
+
+    $(function(){
+        var wid = $('.each').width();
+        var innerWid = $('.each').innerWidth();
+        var outerWid = $('.each').outerWidth();
+        var outerWid2 = $('.each').outerWidth(true);
+
+        var elmCss = $('.each').css('padding');
+
+
+           console.log("width = " + wid);
+           console.log("innetwidth = " + innerWid);
+           console.log("outertwidth = " + outerWid);
+           console.log("outertwidth = " + outerWid2);
+           console.log("element style = " + parseInt(elmCss));
+           // px값을 버림 >  parseInt (number값으로 변경)
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+
+<div class="each">
+    <img src="../img/img-01.jpg" alt="">
+    <img src="../img/img-02.jpg" alt="">
+    <img src="../img/img-03.jpg" alt="">
+</div>
+
+
+
+<style>
+    
+    .each{
+        padding: 50px;
+        border: 5px solid #000;
+        margin: 100px;
+    }
+
+    img{
+        width: 300px;
+        height: 200px;       
+    }
+
+    
+   
+</style>
+
+    
+
+
+    
+</body>
+</html>

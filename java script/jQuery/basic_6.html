@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+    $(function(){
+        $('header a').on('click',function(e){
+            e.preventDefault(); // href 속성을 차단
+
+            var idx = $(this).index(); // 클릭하는 a 태그의 index 번호를 가져옴
+            var offsetTop = $('.con').eq(idx).offset().top; // 컨텐츠가 시작되는 위치
+            // console.log(offsetTop)
+            var headHeight =  $('header').innerHeight();
+            
+            $('html').animate({
+                scrollTop : offsetTop - headHeight // (offsetTop :: css margin-top 값) - header height 값
+            });
+            // console.log(headHeight)
+        });
+
+         //scroll event
+         $(window).on('scroll',function(){
+
+            $('.con').each(function(i){ // each = for 속성과 비슷,,
+                var conOffset = $('.con').eq(i).offset().top;                
+                var wScroll = $(window).scrollTop();
+                
+                if(conOffset/1.5 < wScroll){
+                    $('header a').eq(i).addClass('active').siblings().removeClass('active')
+                    // siblings() :: 첫번째 a 태그의 형제들
+                }
+             });
+
+                
+        });
+
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+    <header>
+        <nav>
+            <a class="active">Navi01</a>
+            <a>Navi02</a>
+            <a>Navi03</a>
+            <a>Navi04</a>
+        </nav>
+    </header>
+
+    <section class="con">contents_01</section>
+    <section class="con">contents_02</section>
+    <section class="con">contents_03</section>
+    <section class="con">contents_04</section>
+
+<style>
+    
+  header{
+      position: fixed; top: 0; left: 0;
+      background: #ddd;
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+  }
+  header a.active{
+      background: rgba(255,215,0);
+  }
+  section{
+      height: 900px;
+      margin-top: 40px; /* 띄워진 header 때문에 컨텐츠 1 내용이 가려져서 margin 값 줌*/
+  }
+  section:nth-of-type(even){
+      background:#eee;
+  }
+
+    
+   
+</style>
+
+    
+
+
+    
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+    $(function(){
+        $('header a').on('click',function(e){
+            e.preventDefault(); // href 속성을 차단
+
+            var idx = $(this).index(); // 클릭하는 a 태그의 index 번호를 가져옴
+            var offsetTop = $('.con').eq(idx).offset().top; // 컨텐츠가 시작되는 위치
+            // console.log(offsetTop)
+            var headHeight =  $('header').innerHeight();
+            
+            $('html').animate({
+                scrollTop : offsetTop - headHeight // (offsetTop :: css margin-top 값) - header height 값
+            });
+            // console.log(headHeight)
+        });
+
+
+         //scroll event
+        var headOffset = $('header').offset().top;
+        
+
+         $(window).on('scroll',function(){
+             
+            var wScroll = $(window).scrollTop();
+            if(headOffset <= wScroll){
+                $('header').addClass('active');
+            }else{
+                $('header').removeClass('active');
+            }
+            
+                
+        });
+
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+    
+    <div class="bn">banner</div>
+
+    <header>
+        <nav>
+            <a>Navi01</a>
+            <a>Navi02</a>
+            <a>Navi03</a>
+            <a>Navi04</a>
+        </nav>
+    </header>
+
+    <section class="con">contents_01</section>
+    <section class="con">contents_02</section>
+    <section class="con">contents_03</section>
+    <section class="con">contents_04</section>
+
+<style>
+    
+  header{
+      position: relative;
+      background: rgba(255,215,0);
+      padding: 10px 0;
+      width: 100%;
+      text-align: center;
+  }
+
+  header.active{
+     position: fixed; top: 0; left: 0;
+  }
+
+  section{
+      height: 900px;
+      margin-top: 40px;
+  }
+
+  section:nth-of-type(even){
+      background:#eee;
+  }
+
+  .bn{
+      height: 200px;
+      background: rgb(10, 97, 29);
+  }
+
+    
+   
+</style>
+
+    
+
+
+    
+</body>
+</html>

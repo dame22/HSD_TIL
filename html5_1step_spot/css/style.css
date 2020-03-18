@@ -66,15 +66,26 @@ header div p > span{
     position: absolute;
     right: 0; top: 40px;
     background: rgba(255,215,0);
-    display: none;
+    transition: 0.5s;
+    opacity: 0;
+    
 }
+header div p > span.active{
+    opacity: 1;    
+}
+
 
 header div p > span a{
     display: block;
     padding: 10px 20px;
     color: #666;
 }
-    
+
+/* header div p .trigger_menu.active + span{
+    opacity: 1;
+    top: 40px;
+} */
+
 header div .trigger_menu{
     width:38px; height:20px; 
     font-size:0; 
@@ -89,15 +100,15 @@ header div .trigger_menu span:nth-of-type(1){}
 header div .trigger_menu span:nth-of-type(2){top:44%; width:80%;}
 header div .trigger_menu span:nth-of-type(3){bottom:0; width:90%;}
 
-header div .trigger_menu:hover span:nth-of-type(1){
+header div .trigger_menu.active span:nth-of-type(1){
     transform:rotate(45deg); /*각도*/
     top:46%;
 }
-header div .trigger_menu:hover span:nth-of-type(2){
+header div .trigger_menu.active span:nth-of-type(2){
     transform:translate(100%); /*오브젝트 위치 이동*/
     opacity:0;
 }
-header div .trigger_menu:hover span:nth-of-type(3){
+header div .trigger_menu.active span:nth-of-type(3){
     transform:rotate(-45deg);
     bottom:45%;
 }

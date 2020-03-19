@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            var idx = $('.con_s1 li').index();
+
+            $('.con_s1 li').on('click',function(){
+            //    var idx = $(this).index();
+            //    $('.con_s1 li').eq(idx);
+
+                var imgSrc =  $(this).find('img').attr('src'); // 클릭하는 li에서 img태그를 찾아 src 속성을 가져옴
+                var txt = $(this).find('span').text();
+
+               $('.pop img').attr('src',imgSrc);
+               $('.pop span').text(txt);
+               
+            });
+
+            function imgChange(){
+                var imgSrc = $('.con_s1 li').eq(idx).find('img').attr('src'); 
+                var txt = $('.con_s1 li').eq(idx).find('span').text();           
+
+                $('.pop img').attr('src',imgSrc);
+                $('.pop span').text(txt);  
+
+                if(idx == $('.con_s1 li').length-1){ // idx = 5 : li.length = 6 - 1
+                   $('.pop div a:last').hide();
+                }else{
+                    $('.pop div a:last').show(); 
+                }                         
+            }
+
+
+            $('.pop div a').eq(1).on('click',function(){
+                ++idx;
+                imgChange()
+            });
+
+            $('.pop div a').eq(0).on('click',function(){
+                --idx;   
+                imgChange()
+            });
+
+
+            // $('.pop div').on('click',function(e){
+                
+            //     var target = e.target;
+
+            //     if($(target).text() == 'prev'){
+            //         --idx;
+            //     }else{
+            //         ++idx;
+            //     }
+
+            //     imgChange()                     
+               
+
+            // });
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+    <div class="pop">
+        <img src>
+            <span></span>
+
+        <div>
+            <a>prev</a>
+            <a>next</a>
+        </div>
+
+    </div>
+
+    
+    <div class="con_s1">
+        <h2>PHOTO LIST</h2>
+        <ul>
+            <li> 
+                <img src="img/photo01.jpg" alt="">
+                <span>이미지1</span>
+            </li>
+            <li>
+                <img src="img/photo02.jpg" alt="">
+                <span>이미지2</span>
+            </li>
+            <li>
+                <img src="img/photo03.jpg" alt="">
+                <span>이미지3</span>
+            </li>
+            <li>
+                <img src="img/photo01.jpg" alt="">
+                <span>이미지4</span>
+            </li>
+            <li>
+                <img src="img/photo03.jpg" alt="">
+                <span>이미지5</span>
+            </li>
+            <li>
+                <img src="img/photo02.jpg" alt="">
+                <span>이미지6</span>
+            </li>
+        </ul>        
+    </div>
+    
+    <div class="con_s2">
+        <h2>PHOTO LIST</h2>
+        <ul>
+            <li> 
+                <img src="img/photo01.jpg" alt="">
+                <span>제목</span>
+            </li>
+            <li>  
+                <img src="img/photo01.jpg" alt="">
+                <span>제 목</span>
+            </li>
+            <li>
+                <img src="img/photo01.jpg" alt="">
+                <span>제목</span>
+            </li>
+            <li>
+                <img src="img/photo01.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/photo01.jpg" alt="">
+            </li>
+            <li>
+                <img src="img/photo01.jpg" alt="">
+            </li>
+        </ul>        
+    </div>
+
+
+
+
+</body>
+</html>

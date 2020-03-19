@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+        $(function(){
+            // $('선택자').메소드();
+
+            $('.box').hide(); // hide = display:none
+            $('button:first').on('click',function(){
+                $('.box').css({
+                    border:'1px solid #000',
+                    padding:'60px',
+                    fontSize:'5em' // == 'font-size':'5em'
+                })
+                // $('.box').show(300); // show = display:block
+                //$('.box').slideDown(300);
+                $('.box').slideToggle(300); // 하나의 버튼으로 show, hide 
+
+                
+            });
+            $('button:last').on('click',function(){
+                //$('.box').hide(300);
+                //$('.box').slideUp(300);
+            });
+        });     
+
+        
+        // $(document).ready(function(){
+
+        // });
+
+    </script>
+</head>
+<body>
+
+    <button> show() </button>
+    <button> hide() </button>
+
+    <div class="box">
+        콘텐츠 내용입니다.
+    </div>
+    
+
+
+    
+</body>
+</html>

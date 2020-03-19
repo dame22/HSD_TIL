@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+// js식 : var delta = e.wheelDelta;
+// next : this의 다음 컨텐츠 || prev :: this의 이전 컨텐츠
+// stop() : 기존의 animate를 멈춤
+
+$(function(){
+       var move = 0;
+
+        $('section div').on('mousewheel',function(e){            
+            var delta = e.originalEvent.wheelDelta;
+            //console.log(delta);
+
+            if(delta < 0 ){ // 휠 내림
+                console.log('내림');
+                move = $(this).next().offset().top;  
+
+            }else{ // 휠올림
+                console.log('올림');
+                move = $(this).prev().offset().top;                
+            }
+
+            $('html').stop().animate({
+                scrollTop : move
+            });
+
+            
+            console.log(move)
+
+            
+        });
+        
+           
+
+
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+
+    <header></header>
+    
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>        
+    </section>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        div{
+            width: 100%; height: 100vh;
+            background: rgb(255, 238, 143);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5em;
+        }
+
+        div:nth-of-type(even){
+            background: rgb(157, 201, 179);
+        }
+        
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

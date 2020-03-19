@@ -10,18 +10,31 @@
     <link href="css/bootstrap.css" rel="stylesheet"> 
     <link href="css/style.css" rel="stylesheet"> 
     <link rel="shortcut icon" href="./img/fcon.ico" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
     <!--favicon 확장자->ico-->
 </head>
 <body>
+
+    <script>
+        $(function(){
+            $('nav ul li').on('click',function(e){
+                e.preventDefault()
+                var idx = $(this).index();
+                $('sction').hide(); // section은 모두 숨기고
+                $('section').eq(idx).show(); // 선택한 section만 보인다
+                // $('section').eq(idx).show().siblings().hide(); > stction 다른 형제 (header,aside..) 가 사라짐
+            });
+        });     
+    
+    </script>
 
  <div class="wrap">
     <header>
         <nav>
             <h1><a href="#"><img src="img/logo.gif"></a></h1>
             <ul>
-                <li>
-                <a href="index.html" class="active">home</a>
-                </li>
+                <li><a href="index.html" class="active">home</a></li>
                 <li><a href="#">Work</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Blog</a></li>
@@ -53,7 +66,22 @@
             <span></span>
             <span></span>
         </a>
-    </header>     
+    </header> 
+    
+    
+    <section>HOME</section>
+    <section>WORK</section>
+    <section>ABOUT</section>
+    <section>BLOG</section>
+    <section>SERVICES</section>
+    <section>CONTACT</section>
+       
+       <style>
+            section{
+                display: none;
+            }
+        </style>
+
     <section>
     
     
@@ -93,6 +121,8 @@ marker.setMap(map);
        
        
     </section>
+
+
     <aside>
         <a><span></span></a>
         <div>

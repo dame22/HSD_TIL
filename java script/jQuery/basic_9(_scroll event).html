@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+
+
+    $(function(){
+        var sTop = 0;
+        
+        $(window).on('scroll',function(){
+            var winH = $(window).height();
+            var sTop = $(this).scrollTop();             
+
+            $('div').each(function(i){
+                var con = $('div').eq(i).offset().top;
+                
+                if(con-winH < sTop){
+                    $('div').eq(i).css({
+
+                    opacity : 1,
+                    marginTop : 100
+
+                    });
+                };
+
+            });
+        });
+
+        $(window).trigger('scroll');
+        // 윈도우 scroll 이벤트 강제 발생
+        //dispatchEvent() - java script
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+    
+    <section>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </section>
+
+    <style>
+        div{
+            width: 400px; height: 700px;
+            background: rgba(255,215,0);
+
+            margin: 0 auto;
+            margin-top: 200px;
+
+            opacity: 0;
+            transition: 1s;
+        }
+        
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

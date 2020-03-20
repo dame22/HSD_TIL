@@ -1,9 +1,9 @@
 $(function(){
     $('.slideList img').not(':first').hide(); // not(':first') :: 첫 번째를 제외한다
 
-    var idx = 0, inter;
+    var idx = 0;
     function loop(){
-        inter = setInterval(function(){
+        setInterval(function(){
         
             $('.slideList img').eq(idx).fadeOut(2000);
             idx++;
@@ -16,6 +16,4 @@ $(function(){
        
 });
 
-window.addEventListener('DOMContentLoaded',function(){
-  
-});
+

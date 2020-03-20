@@ -5,7 +5,7 @@
     <title>Document</title>
     <link href="css/style.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+   
     <script>
         $(function(){
             var idx = $('.con_s1 li').index();
@@ -29,7 +29,7 @@
                 $('.pop img').attr('src',imgSrc);
                 $('.pop span').text(txt);  
 
-                if(idx == $('.con_s1 li').length-1){ // idx = 5 : li.length = 6 - 1
+                if(idx == $('.con_s1 li').length-1){ // idx = 0 ~ 5 : li.length = 1 ~ 6  : -1 해줘야 숫자가 맞음
                    $('.pop div a:last').hide();
                 }else{
                     $('.pop div a:last').show(); 

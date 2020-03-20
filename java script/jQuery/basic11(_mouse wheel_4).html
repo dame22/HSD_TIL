@@ -6,40 +6,30 @@
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script
-    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
-    integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
-    crossorigin="anonymous"></script>
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     
 
 <script>
-// js식 : var delta = e.wheelDelta;
-// next : this의 다음 컨텐츠 || prev :: this의 이전 컨텐츠
-// stop() : 기존의 animate를 멈춤
+
 
     $(function(){
        var move = 0,
        num = 0;
-
+        $('section').css('top','0px');
         $('section div').on('mousewheel',function(e){            
             var delta = e.originalEvent.wheelDelta;
-            //console.log(delta);
-
-            
+                       
             if(delta < 0 ){ // 휠 내림 //console.log('내림');
-                if(num == 5){ return }
                 move = $(this).next().offset().top;
                 
 
             }else{ // 휠올림 //console.log('올림');
-                if(num == 0){ return }
-                if(num > 0){
-                    move = $(this).prev().offset().top;
-                }                               
-            }
+                move = $(this).prev().offset().top;                                           
+            }       
 
-            $('html').stop().animate({
-                scrollTop : move
-            },1000,'easeOutBounce',function(){
+            $('section').stop().animate({
+                top : -move
+            },1000,function(){
                 if(delta < 0){
                     num++;}
                 else{
@@ -72,9 +62,21 @@
             margin: 0;
         }
 
+        body{
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        section{
+            position: relative;
+            top: 0;
+            height: 100vh;
+            /* overflow-y:scroll; :: 스크롤을 움직이게 만들 수 있음*/
+        }
+
         div{
             width: 100%; height: 100vh;
-            background: rgb(255, 238, 143);
+            background: rgb(255,215,0);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -82,7 +84,7 @@
         }
 
         div:nth-of-type(even){
-            background: rgb(157, 201, 179);
+            background: rgb(5, 105, 67);
         }
         
 

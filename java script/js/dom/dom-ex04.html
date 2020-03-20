@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
         <link href="dom-ex04.css" rel="stylesheet">
-        <script src="dom-ex04.js"></script>
+        <!-- <script src="dom-ex04.js"></script> -->
         <style>
             *{font-size:26px;}
             article{border:3px solid #000; width:800px; margin:200px auto; padding:100px;}
@@ -49,6 +49,48 @@
         </div>
     </article>
        
+    <script>
+        /*
+        1. 탭을 누른다
+        2. 클릭한 탭에 active 클래스 추가한다.
+        3. 그 외 탭에 클래스 뺀다.
+        */
+    
+        var tabJs = document.querySelector('.tab');
+        var liJs = document.querySelectorAll('li');
+        var tabCon = document.querySelectorAll('.tab-con');
+        var dId;
+
+        tabJs.addEventListener('click', function(e) {
+            // console.log(e.target.nodeName);
+
+            if(e.target.nodeName != 'LI') {
+                return;
+            }
+            for(var i = 0; i < liJs.length; i++) {
+                liJs[i].classList.remove('active');
+                tabCon[i].classList.remove('active');
+            }
+            // var target = e.target.querySelector('li');
+            // console.log(target);
+            // target.classList.toggle('active');
+            e.target.classList.add('active');
+
+            /*
+            1. 클릭한 탭의 data id 가져온다.
+            2. 해당 id와 인덱스 같은 div를 보여준다. active
+            3. 그외 div는 숨긴다. active
+            */
+
+            idx = e.target.dataset.id;
+            // console.log(idx);
+            tabCon[idx].classList.add('active');
+
+
+
+        });
+
+    </script>
        
        
     <article id = "ex3">
@@ -64,7 +106,9 @@
             </div>
         </div>
     </article>
-        
+
+
+    
         
     </body>
 </html>

@@ -10,34 +10,18 @@
     
 
 <script>
-
+// position().top; :: 부모에서부터 위치하고있는 지점
+// offset().top; :: 상단에서부터 위치하고있는 지점
+// offset().left
 
     $(function(){
-        var move=0, num=0, bln=true;
-    
-    $('html').scrollTop(0);
-    
-    $('section div').on('mousewheel',function(e){        
-        var delta = e.originalEvent.wheelDelta;
+        var a = $('section div').eq(0).offset().top;
+        var b = $('section div').eq(0).position().top;
 
-        if(bln){
-            bln = false;
-            if(delta < 0){
-                num++;
-            }else{
-                num--;
-            }
-
-            move = num * $(window).height();
-
-            $('section').animate({ 
-                top : -move 
-            },1000,function(){bln=true});
-        }
-
+        console.log('offset - ' + a);
+        console.log('position - ' + b);
         
-        
-    });    
+
     });
      
       
@@ -65,14 +49,13 @@
 
         body{
             width: 100%;
-            height: 100vh;
-            overflow: hidden;
+            height: 100vh;            
         }
         section{
             position: relative;
-            top: 0;
-            height: 100vh;
-            /* overflow-y:scroll; :: 스크롤을 움직이게 만들 수 있음*/
+            top: 300px;
+            border: 5px solid #f00; 
+            padding-top: 100px;      
         }
 
         div{

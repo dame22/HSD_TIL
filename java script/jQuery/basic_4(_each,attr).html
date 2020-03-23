@@ -7,20 +7,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <script>
-       // each :: 선택자의 개수 만큼 구문 실행,,img들의 index 값도 가져옴
+       // each :: 선택자의 개수 만큼 구문 실행( for 과 비슷 ),,img들의 index 값도 가져옴
        // delay :: fade / animate 앞에 쓸 수 있음
-       // append :: each 태그안 마지막 부분에 넣음
+       // ( 넣어질 곳 ).append( 넣을 내용 ) :: 해당 태그안 마지막 부분에 넣음
        // attr(a) / attr(a,b) :: a의 속성값을 가져옴 (src,name,id..) / a 값을 b로 변경 
 
     $(function(){
-        var imgArry = ['../img/img-04.jpg','../img/img-05.jpg'];
+        var imgArry = ['img/img-04.jpg','img/img-05.jpg'];
         var tag = "<img src=" + imgArry[0] +">"
             tag += "<img src=" + imgArry[1] +">"
             // 할당 연산자를 사용함으로써 값을 바꾸지 않고 추가함
 
         $('.each').append(tag);
 
-        $('.each img').each(function(i){
+        $('.each img').each(function(i){ // each가 가져온 img의 인덱스 값이 i에 들어감
             $(this).delay(500*i).fadeIn(); //fade의 display:block 속성 때문에 가로로 나열된 이미지가 세로로 떨어짐
         });
 

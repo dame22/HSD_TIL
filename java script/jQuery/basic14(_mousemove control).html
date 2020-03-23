@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
+<script>
+// mousedown :: 누르고 있다 / 드래그
+// mousemove :: 움직이고 있다
+// mouseup :: 누름해제 / 드래그 해제
+
+
+
+    $(function(){
+        var parenNode = $('section');
+        var dragBln;
+        var offset = {x:0, y:0};
+
+        parenNode.on('mousedown',function(e){            
+            dragBln = true;
+
+            offset.x = e.offsetX; // 클릭한 위치지점을 넣음
+            offset.y = e.offsetY;           
+        });
+
+        parenNode.on('mousemove',function(e){          
+
+            if(dragBln){
+                //console.log('드래그 중..');
+
+            // if(e.target.nodeName == 'DIV'){
+            //     $('section div').css({
+            //         left : e.pageX,
+            //         top : e.pageY
+            //     })
+            // }  
+
+            if(e.target.nodeName != 'DIV'){ return };
+                $('section div').css({
+                    left : e.pageX - offset.x,
+                    top : e.pageY - offset.y
+                });                
+            }
+        });
+
+        parenNode.on('mouseup',function(e){            
+            dragBln = false;
+        });
+        
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+
+    <header></header>
+    
+    <section>
+        <div>01</div>          
+    </section>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{}
+
+        section{
+            position: relative;
+            height: 2000px;
+            border: 5px solid #f00;               
+        }
+
+        div{
+            width: 100px; height: 100px;
+            background: rgb(255,215,0);
+            position: absolute;
+            left: 0; top: 0;
+        }
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

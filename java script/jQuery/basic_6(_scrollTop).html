@@ -7,8 +7,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 <script>
-
-
+    
     $(function(){
         $('header a').on('click',function(e){
             e.preventDefault(); // href 속성을 차단
@@ -35,12 +34,8 @@
                     $('header a').eq(i).addClass('active').siblings().removeClass('active')
                     // siblings() :: 첫번째 a 태그의 형제들
                 }
-             });
-
-                
+             });                             
         });
-
-
     });
      
       

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
+<script>
+// clientY :: 브라우저의 height 값 (viewport 브라우저 화면)
+// pageY :: 문서 전체 커서위치
+// offsetY :: 엘리먼트에서 부터의 커서위치 (border값 포함)
+
+
+
+    $(function(){
+        $(window).on('mousemove',function(e){
+
+            // console.log('clientY = ' + e.clientY);
+            // console.log('pageY = ' + e.pageY);
+            // console.log('offsetY = ' + e.offsetY);
+
+            console.log('clientX = ' + e.clientX);
+
+            if($(window).width()/2 < e.clientX){
+                console.log('우측')
+            }else{
+                console.log('좌측')
+            }          
+            
+        });
+        
+
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+
+    <header></header>
+    
+    <section>
+        <div>01</div>          
+    </section>
+
+    <style>
+        *{
+            margin: 0;
+        }
+
+        body{}
+
+        section{
+            position: relative;
+            height: 2000px;
+            border: 5px solid #f00;               
+        }
+
+        div{
+            width: 100px; height: 100px;
+            background: rgb(255,215,0);
+        }
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

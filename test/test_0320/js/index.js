@@ -50,13 +50,13 @@
 //     }
         
     
-//     $('.ly-pop div a').eq(0).on('click',function(){//next
+//     $('.ly-pop div a').eq(1).on('click',function(){//next
 //         ++idx;
 //         imgChange()  
                   
 //     })
 
-//     $('.ly-pop div a').eq(1).on('click',function(){
+//     $('.ly-pop div a').eq(0).on('click',function(){
 //         --idx;
 //         imgChange()    
 //     })
@@ -68,42 +68,85 @@
 
 
 
+
+
 // java script
 
 window.addEventListener('DOMContentLoaded',function(){
 
-    var lyPop = document.querySelector('.ly-pop');
-    lyPop.style.display = 'none';
+var lyPop = document.querySelector('.ly-pop');
+lyPop.style.display = 'none';
+
+var popImgNode = document.querySelector(".ly-pop p img");
+var popTxtNode = document.querySelector(".ly-pop figcaption");
+
+//추출할 노드선택
+var gallery = document.querySelector('.gallery');
+var li = document.querySelectorAll('.gallery li');
+var target;
+
+gallery.addEventListener('click',function(e){
+    target = e.target;
     
-    var popImgNode = document.querySelector('.ly-pop p img');
-    var popTxt = document.querySelector('.ly-pop figcaption');
+    for(;target.nodeName != 'LI'; target = target.parentNode);
+    
+    var imgNode = target.querySelector('img');
+    var txtNode = target.querySelector('figcaption');
+    
+    popImgNode.src = imgNode.src;
+    popTxtNode.textContent = txtNode.textContent;
+    lyPop.style.display = 'flex';
+    
+});
 
-    var gallery = document.querySelector('.gallery');
-    var li = document.querySelectorAll('.gallery li');    
-    var target;
+lyPop.addEventListener('click',function(){
+    this.style.display = 'none';
+});
 
-    gallery.addEventListener('click',function(e){
-        var target = e.target;
-        for(;target.nodeName != 'LI'; target = target.parentNode);
-       
-        var imgNode = target.querySelector('img');
-        var txtNode = target.querySelector('figcaption');
-      
+
+var button = lyPop.querySelectorAll('div a');
+
+button[0].addEventListener('click',function(e){
+    e.preventDefault();
+    e.stopPropagation(); // 다른 이벤트를 차단시키고 해당 이벤트를 우선시함
+    
+    changeGallery("previousElementSibling");
+    
+});
+
+button[1].addEventListener('click',function(e){//next
+    e.preventDefault();
+    e.stopPropagation();
+    
+    changeGallery("nextElementSibling");
+});
+
+
+function changeGallery(nextBack){
+    try{
+
+        var imgNode = eval("target." + nextBack + ".querySelector('img')");
+        var txtNode = eval("target." + nextBack + ".querySelector('figcaption')");
+        // 현재 target에는 LI가 들어가있음, LI의 다음 형제를 가르킴
+
         popImgNode.src = imgNode.src;
-        popTxt.textContent = txtNode.textContent;
+        popTxtNode.textContent = txtNode.textContent;
 
-        lyPop.style.display = 'flex';
+        target = eval("target." + nextBack);
 
-
-    });     
-    
-    
-    for(i = 0; i < li.length; i++){
-        li[i].addEventListener('click',function(){
-            
-        });
+        console.log('데이터가 바뀌고 있음')
+   
+    }catch{ // 에러발생 시 실행
+        console.log('더이상 데이터가 없습니다.');
+    }finally{ // 에러가 발생하든 안하든 무조건 실행
+        console.log('무조건 실행될 구문')
     }
+}
+
+
+    
+  
     
 
-})
+});
 

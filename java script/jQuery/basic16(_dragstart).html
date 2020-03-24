@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
+<script>
+// jquery-ui.js script src 필수
+// axis :: 가로, 세로 방향으로만 움직이게함
+// revert :: 현재 위치를 기억하고있다가 원래의 자리로 되돌아감 (true/false 값)
+// containment :: 부모영역 안에서만 드래그 할 수 있게함
+
+/* 바닐라
+var ul = document.querySelector('.slide ul');
+var li = document.querySelectorAll('.slide ul li');
+var length = $('.slide li').length;
+
+for(var i = 0; i < length; i++){
+    li.children[i].style.left = i * 100 + '%' >> ul로 잡을경우
+    li[i].style.left = i * 100 + '%' >> li로 잡을경우
+} 
+*/
+
+
+    $(function(){
+
+        var length = $('.slide li').length;
+        var idx = 0;
+
+        for(var i = 0; i < length; i++){
+            $('.slide li').eq(i).css({
+                left : i * 100 + '%'
+            });
+        }
+
+        var posStart, posStop;
+
+        $('.slide ul').draggable({
+            axis : 'x',
+            // revert : true,
+            start : function(e){
+                // console.log('start')
+                posStart = e.pageX;                
+            },
+            drag : function(e){
+                // console.log(e)
+            
+            },
+            stop : function(e){                
+                posStop = e.pageX;               
+
+                if(posStart > posStop){
+                    console.log('좌측');
+                    console.log(posStart - posStop)
+                    idx++;
+                }else{
+                    console.log('우측')
+                    console.log(posStop - posStart)
+                    idx--;
+                }
+
+                draging();
+            }
+        });
+    function draging(){
+        $('.slide ul').stop().animate({
+            left: -idx * 100 + '%'
+        });
+    }
+     
+    });
+
+// html5 에서만 지원이됨 :: 엘리먼트에 draggable = "true" 값을 넣어줘야함
+// var ban = document.querySelector('.ban')
+// idx.addEventListener('dragstart',function(){
+//     console.log('dragstart')
+// });
+// dragstart / dragend = dragstop(jquery) / [dragover / dragenter / dragleave]  >> drop 관련
+// drop
+     
+      
+  
+</script>
+
+</head>
+<body>
+    
+<div class="slide">
+    <ul>
+        <li> slide 01 </li>
+        <li> slide 02 </li>
+        <li> slide 03 </li>
+        <li> slide 04 </li>
+    </ul>
+</div>
+
+<!-- <div class="ban" draggable = "true"></div> -->
+ 
+
+    <style>
+        .slide{
+            width: 300px; height: 300px;         
+            border: 5px solid #00f;
+            position: relative;
+        }
+        .slide ul{
+            position: absolute; left: 0; top: 0;
+            width: 100%; height: 100%;
+            margin: 0; padding: 0;
+            list-style-type: none;
+        }
+        .slide ul li{           
+            width: 100%; height: 100%;
+            border: 1px solid #000;
+            background: rgb(255,215,0);   
+            position: absolute;
+            left: 0; top: 0;
+        }
+
+        /* .slide ul li:nth-of-type(1){ left: 0;}
+        .slide ul li:nth-of-type(2){ left: 100%;}
+        .slide ul li:nth-of-type(3){ left: 200%;}
+        .slide ul li:nth-of-type(4){ left: 300%;} >> script 로 함*/
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

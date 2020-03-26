@@ -14,8 +14,9 @@
             e.preventDefault();
 
             var idx = $(this).index(); 
+            // 
             var offsetTop = $('.con').eq(idx).offset().top; 
-            // console.log(offsetTop)
+            // console.log("offsetTop = " + offsetTop)
             var headHeight =  $('header').innerHeight();
             
             $('html').animate({
@@ -37,6 +38,8 @@
             }else{
                 $('header').removeClass('active');
             }
+            // console.log("headOffset = " + headOffset)
+            // console.log("wScroll = " + wScroll)
             
                 
         });

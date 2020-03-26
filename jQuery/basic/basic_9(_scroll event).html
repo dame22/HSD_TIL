@@ -9,17 +9,18 @@
 <script>
 
 
+
     $(function(){
         var sTop = 0;
         
         $(window).on('scroll',function(){
             var winH = $(window).height();
-            var sTop = $(this).scrollTop();             
+            sTop = $(this).scrollTop();             
 
             $('div').each(function(i){
                 var con = $('div').eq(i).offset().top;
                 
-                if(con-winH < sTop){
+                if(con - winH < sTop){
                     $('div').eq(i).css({
 
                     opacity : 1,
@@ -27,7 +28,7 @@
 
                     });
                 };
-
+                
             });
         });
 

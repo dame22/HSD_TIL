@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    
+
+<script>
+// jquery-ui.js script src 필수
+// axis :: 가로, 세로 방향으로만 움직이게함
+// revert :: 현재 위치를 기억하고있다가 원래의 자리로 되돌아감 (true/false 값)
+// containment :: 부모영역 안에서만 드래그 할 수 있게함
+
+
+    $(function(){
+        $('.drag').draggable({
+            // axis : 'y',
+            // revert : true,
+            containment : '.drop',            
+            start : function(){console.log('start')},
+            drag : function(){console.log('drag')},
+            stop : function(){console.log('stop')},
+        });
+            
+        $('.drop').droppable({
+            accept : $('.drag'), // 대상자
+            hoverClass : 'active',
+            drop : function(){
+                $(this).append($('.drag'));
+                // 선택자안으로 이동
+            }
+        });
+    });
+     
+      
+  
+</script>
+
+</head>
+<body>
+    
+    <div class="drag"></div>
+    <div class="drop"></div> 
+
+    <style>
+        .drag{
+            width: 100px; height: 100px;
+            background: #eee
+        }
+        .drop{
+            width: 300px; height: 300px;
+            border: 1px solid #f00;
+            background: #ddd
+        }
+        .active{
+            background: rgb(100, 29, 133);
+        }
+
+    </style>
+
+    
+
+
+    
+</body>
+</html>

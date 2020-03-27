@@ -1,0 +1,345 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+/* -------------- */
+
+header{
+    width: 100%;
+    height: 100px;   
+    padding: 1% 15%; 
+    position: fixed;left: 0; top: 0;    
+    z-index: 10;
+    background: rgba(0,0,0,0.5); 
+   
+}
+
+header .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%; 
+    padding: 0 5%; 
+    z-index: 10;
+      
+}
+header .nav h1{
+    font-size: 32px;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-weight: unset;
+}
+
+header.active{
+    position: fixed;
+    left: 0; top: 0;     
+    padding: 2.5% 15%; 
+    background: rgba(0,0,0,0.5);
+}
+
+header .tab{
+    position: absolute;
+    left: 0;top: 0;
+    background: rgba(0,0,0,0.6);    
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    opacity: 0;
+    transition: .5s;
+    transform: scale(0);
+    z-index: 10;
+}
+
+header .tab.active{
+    opacity: 1;
+    transform: scale(1)
+}
+
+header .tab a{
+    color: #ddd;
+    font-size: 2em;    
+    margin: 20px 0;
+}
+
+.visual{
+    width: 100%;
+    height: 650px; 
+    position: relative; 
+    overflow: hidden;
+    transition: .5s;
+}
+
+.visual.active{
+    transform: scale(0.9)
+}
+.visual .text{
+    height: 100%;
+    display: flex;
+    flex-direction: column;    
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 120px;
+    padding-top:200px; 
+    opacity: 0;    
+    animation: txt .5s  0.5s forwards;
+
+    position: absolute;
+    left: 41%; top: 13%;
+}
+
+@keyframes txt{
+    0%{}
+    100%{
+        padding-top: 0;
+        opacity: 1;
+    }
+}
+.visual .text span{
+    font-size: 16px;
+    letter-spacing: 15px;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+}
+.visual .text h2{
+    font-size: 56px;
+    color: #ddd;
+    font-family: 'Poppins', sans-serif;
+    font-weight: unset;
+}
+
+
+/* bugger */
+
+/* .menu-trigger {
+	margin-right: 70px;
+    margin-bottom: 50px;
+    padding: 5px 0;
+} */
+.menu-trigger,
+.menu-trigger span {
+	display: inline-block;
+	transition: all .4s;
+	box-sizing: border-box;
+}
+
+.menu-trigger {
+	position: relative;
+    /* width: 50px; */
+    width: 30px;
+    height: 44px;
+    z-index: 20;
+}
+
+.menu-trigger span {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: #ddd;
+    border-radius: 4px;   
+}
+
+.menu-trigger span:nth-of-type(1) {
+	top: 8px;
+}
+
+.menu-trigger span:nth-of-type(2) {
+	top: 16px;
+}
+
+.menu-trigger span:nth-of-type(3) {
+	top: 24px;
+}
+
+.menu-trigger:hover span:nth-of-type(1) {
+	top: 10px;
+}
+
+.menu-trigger:hover span:nth-of-type(2) {
+	top: 20px;
+}
+
+.menu-trigger:hover span:nth-of-type(3) {
+	top: 30px;
+}
+
+/*  */
+
+section{
+   width: 100%;
+   margin: 0;
+   padding: 0;
+}
+section h3{
+    width: 100%;
+    height: 370px;
+    font-size: 40px;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section h3:after{
+    content: '';    
+    width: 85px;
+    height: 2px;
+    background: #0e27fb;
+    margin-top: 30px;
+}
+
+section figure{
+    width: 900px;
+    height: 600px; 
+    margin: 50px 10px;
+    position: relative;
+    opacity: 0;
+    transition: .5s;
+    /* z-index: -10; */
+}
+
+section figure img{
+    width: 100%;
+    height: 100%;
+}
+
+section figure:hover figcaption{
+    opacity: 1;    
+}
+
+section figure:nth-of-type(odd){
+    float: left;
+}
+
+section figure:nth-of-type(even){
+    float: right;
+}
+
+section figure figcaption{
+    position: absolute;
+    left: 20px;top: 30px;
+    width: 95%;
+    height: 90%;    
+    background: rgba(255,255,255,0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: .5s;    
+}
+
+section figure figcaption span{
+    width: 65px;
+    height: 65px;
+    background: #000;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: ;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+section figure figcaption strong{
+   font-size: 30px;
+   font-weight: unset;
+   color: #333;
+   font-family: 'Poppins', sans-serif;
+}
+
+section figure figcaption em{
+    font-style: normal;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+section figure img{
+    width: 100%;     
+    height: 100%;   
+}
+
+
+
+section article{
+    width: 100%;
+    height: 350px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+section article div{
+    padding: 0 20px;
+    height: 50px;
+    border: 1px solid #eee;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    cursor: pointer;
+    
+}
+
+section article div.active{
+    border-color: #0e27fb;
+    color: #0e27fb;
+    padding: 0 30px;
+}
+
+.bottom{
+    width: 100%;
+    height: 550px;
+    background: #eee;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 300px;
+}
+
+.bottom h4{
+    font-size: 50px;
+    color: #333;
+    white-space: pre-line;
+    font-family: 'Poppins', sans-serif;
+    font-weight: unset;
+}
+.bottom div{
+    background: #0e27fb;
+    color: #fff;
+    font-size: 16px;
+    padding: 15px 50px;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    
+}
+
+footer{
+    width: 100%;
+    height: 300px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer span{
+    font-size: 16px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+}

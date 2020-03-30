@@ -1,5 +1,6 @@
 // json :: 객체형태의 문서 >> json = {"name" : "홍길동"}
 // xml :: 태그형태의 문서 >> <imgSrc> ../img/img-01.jpg </imgSrc> 
+// $.ajax :: 외부의 파일을 호출할 수 있는 메소드
 
 $(function(){
   $.ajax({

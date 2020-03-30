@@ -1,5 +1,5 @@
-// json :: 객체형태의 문서 >> json = {"name" : "홍길동"}
-// xml :: 태그형태의 문서 >> <imgSrc> ../img/img-01.jpg </imgSrc> 
+// json :: 객체형태의 문서 >> json = {"name" : "홍길동"} // js
+// xml :: 태그형태의 문서 >> <imgSrc> ../img/img-01.jpg </imgSrc> // jquery
 
 $(function(){
   $.ajax({
@@ -12,21 +12,39 @@ $(function(){
     complete : function(){
       setTimeout(function(){
         $('.loading').fadeOut();
-      },2000);
+      },1000);
             
     },
     success : function(data){ 
+
+        var imgTag='';
+        var itemRow=3,
+            first=0,
+            last=itemRow; 
+
         setTimeout(function(){
-          var imgTag ='';
-          $(data).find('item').each(function(i){
-            if(i < 3){
-              imgTag = "<img src =" +  $(this).text()+ ">"
-              $('section').append(imgTag);
+            function getItem(){
+              // console.log(first);
+              // console.log(last);
+
+              $(data).find('item').each(function(i){
+                if(first <= i && i < last){
+                  imgTag = "<img src="+$(this).text()+">";
+                  $('section').append(imgTag);
+                  $('section img').eq(i).hide().fadeIn();
+                }
+              });
             }
-          });
-          // $('section').html(imgTag);     // <<   이용시 할당연산자 없이 +=로  
-          $('section').fadeIn();
-        },2000)
+              getItem(); // 버튼을 누르지 않았을 때 실행
+
+              //$('section').html(imgTag);
+              $('section').fadeIn();
+              $('button').on('click',function(){
+                first += itemRow;
+                last += itemRow;
+                getItem();
+              });
+        },2000);
 
         
     },

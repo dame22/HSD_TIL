@@ -1,19 +1,35 @@
-$(function(){
-    $('.slideList img').not(':first').hide(); // not(':first') :: 첫 번째를 제외한다
+$(function(){   
 
-    var idx = 0;
-    function loop(){
-        setInterval(function(){
+    var wCroll = 0,
+        count = 0;
         
-            $('.slideList img').eq(idx).fadeOut(2000);
-            idx++;
-            if(idx == 3){idx = 0;}
-            $('.slideList img').eq(idx).fadeIn(2000);    
-    },4000)
+        $(window).on('scroll',function(e){       
 
-    }
-    loop();
+            wCroll = $(this).scrollTop();          
+                   
+           if(wCroll > count){//내림               
+                $('header h1').addClass('active');
+                $('header nav').addClass('active');
+           }else{           
+                $('header h1').removeClass('active');  
+                $('header nav').removeClass('active');         
+            }
+
+            count = wCroll;           
+
+        });
+
+
+        $('.main .btn a').on('click',function(){
+
+        });
        
 });
+
+
+// window.addEventListener('DOMContentLoade',function(){    ; 
+//     document.documentElement.style.overflowY = 'hidden';
+// })
+
 
 

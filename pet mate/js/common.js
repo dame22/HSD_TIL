@@ -9,37 +9,28 @@ $(function(){
                    
            if(wCroll > count){//내림               
                 $('header h1').addClass('active');
-                $('header nav').addClass('active');
-                $('.main').addClass('active');
+                $('header nav').addClass('active');           
            }else{           
                 $('header h1').removeClass('active');  
-                $('header nav').removeClass('active'); 
-                $('.main').removeClass('active');        
+                $('header nav').removeClass('active');                       
             }
 
             count = wCroll;
-        }); 
-        
-        idx = 0;
+        });      
+        // function visual(){
+        //     $('.visual').animate({
+        //         height : 90 + '%'
+        //      },1500);
 
-        $('.btn a').eq(1).on('click',function(){
-            if(idx < $('.first ul li').length -1){
-                idx++
-            }  $('.first ul').css({
-                    top : -100 * idx + '%'
-                }); 
-                     
-        });
-
-        $('.btn a').eq(0).on('click',function(){
-            if(idx != 0){
-                idx--
-            }  $('.first ul').css({
-                    top : -100 * idx + '%'
-                }); 
-        });
+        //      $('.visual img').eq(1).animate({
+        //         zIdex : 0
+        //      },1500);
+        // };
         
-       console.log( $('.first ul li').index() )
+        // function visual()
+        
+        
+        
 });
 
 

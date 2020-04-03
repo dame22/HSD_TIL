@@ -1,4 +1,5 @@
 @import url('common.css');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
 /*----------------------------*/
 /* color
 #ebe1d2
@@ -38,7 +39,7 @@ header h1{
   transition: .3s;
 }
 header h1.active{ 
-  padding: 1.5% 40%;
+  padding: 1.5% 40%; 
 }
 
 header nav{
@@ -53,6 +54,7 @@ header nav{
 
 header nav.active{
   opacity: 1;
+  background: #ebe1d2;
 }
 
 header nav ul{
@@ -68,7 +70,7 @@ header nav ul li{
   width: 65px; height: 65px; 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items : flex-start;
 
   border-radius: 100%;
   border: 0px solid #fff;
@@ -82,7 +84,7 @@ header nav ul li:hover{
   transform: rotateZ(0deg);
 }
 
-header nav ul li img{
+header nav ul li img{  
   width: 40px; height: 40px; 
 }
 
@@ -91,58 +93,55 @@ header nav ul li img{
   position: relative;
 }
 
-.main.active{
-  background: #ebe1d2; 
-}
-
-.main .first{
+.main div{
   width: 100%;
-  height: 750px;  
-  overflow: hidden;  
+  height: 750px;
   position: relative;
+  overflow: hidden;
+  padding: 0 10%;
+
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-around;
 }
 
-.main .first ul{
-  width: 60%;
-  height: 100%;
+.main div p{
+  width: 100%; 
+  font-family: 'Nanum Myeongjo', serif;
+  font-size: 2.3em;
+  position: relative;
+  
+  
+}
+.main div .visual{
+  margin-top: 50px;
+  height: 90%;
+  overflow: hidden;
+  transition: .5s;
+}
+.main div .visual:hover img:nth-of-type(2){
+  z-index: 0;
+  height: 100%;  
+}
+
+.main div .visual img{
   position: absolute;
-  right: 3%; 
+  right: 35%; bottom: 0;
+
 }
 
-.main .first ul li{
-  width: 100%;
-  height: 100%;
+.main div .visual img:nth-of-type(1){
+  top: 0;
+  height: 0;
 }
-.main .first ul li p{
-  position: absolute;
-  left: -50%;
+.main div .visual img:nth-of-type(2){
+  top:0%;
+  z-index: -10; 
+  transition: .5s;
 }
-.main .first ul li:nth-of-type(1) p{
-  top: 20%;
-}
-.main .first ul li:nth-of-type(2) p{
-  top: 130%;
-}
-.main .first ul li:nth-of-type(3) p{
-  top: 230%
-}
-
-.main .first ul li img{
-  width: 100%;
-  height: 80% 
-}
-
-.main .btn{
-  position: absolute;
-  left: 28%; bottom: 19.5%;
-}
-
-.main .btn a{
-  cursor: pointer;
-  color: #999;
-  font-size: 2em;
-  font-weight: bold;
-  margin: 0 15px;
+.main div .visual img:nth-of-type(3){
+  transform: scale(0.6);
+  left: 35%; top: 38%;
 }
 
 

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="popup">
+        <img src="img/pets.png">
+        <input type="checkbox" name="day">
+        <button>닫기</button>
+
+    </div>
+
+    <script>
+        
+        // localStorage (5Mb) : 데이터를 직접 지우지 않는한 사라지지않음
+
+        //set : 값을 지정
+        localStorage.oneday = 'popup1';
+        localStorage.twoday = 'popup2';
+        localStorage.setItem('thrday','popup3'); // (key값, value 값)
+        
+
+        //get : 값을 받아옴
+        alert(localStorage.twoday); 
+        alert(localStorage.getItem('oneday'));// 위 alert와 같은 방법
+
+        //remove
+        localStorage.removeItem('thrday');
+        localStorage.clear(); // 모두지우기     
+
+
+
+
+        // cookie (4Kb)
+
+        var popup = document.querySelector('.popup');
+        var input = document.querySelector('.popup input');
+        var button = document.querySelector('.popup button');
+
+        setCookie('twoday','event',20000);
+
+        button.addEventListener('click',function(){
+            if(input.checked){
+               setCookie('onday','popup',10000) // >> name,value,time
+            }
+            popup.style.display = 'none';
+            // console.log(input.checked)            
+        });
+
+        function setCookie(name,value,time){ // 쿠키를 생성함
+            var today = new Date();    
+            today.setTime(today.getTime() + 10000);
+            document.cookie = name + "=" + value + ";expires=" + today.toUTCString();        
+        };  
+
+        function getCookie(){ // 쿠키..
+            if(document.cookie.match('popup') != null){
+                popup.style.display = 'none';
+            }else{
+                popup.style.display = 'block';
+            }
+        };
+
+        getCookie();
+
+
+
+
+    // var today = new Date();
+    
+    // today.setTime(today.getTime() + 5000);
+    // // 쿠키를 5초뒤에 삭제
+
+    // // alert(today.toUTCString());
+
+    // document.cookie = "name=popup;expires=" + today.toUTCString();
+    
+        
+    </script>
+</body>
+</html>

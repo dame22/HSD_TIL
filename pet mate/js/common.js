@@ -17,19 +17,18 @@ $(function(){
 
             count = wCroll;
         });      
-        // function visual(){
-        //     $('.visual').animate({
-        //         height : 90 + '%'
-        //      },1500);
-
-        //      $('.visual img').eq(1).animate({
-        //         zIdex : 0
-        //      },1500);
-        // };
         
-        // function visual()
-        
-        
+        $('.main .visual').animate({
+            height: 90 + '%'
+        },1500,function(){
+            $('.main .visual img').eq(1).css({
+                zIndex: 0,
+                display: 'block'
+            });                     
+        });
+      
+           
+       
         
 });
 

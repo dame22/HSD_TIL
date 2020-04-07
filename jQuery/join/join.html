@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>약관동의</title>
+</head>
+<body>
+
+    <h1>약관동의</h1>
+        <form name="join">
+            <p><input type="checkbox" placeholder="name" name="all">전체동의</p>
+            <p><input type="checkbox" name="poll"> 개인정보동의</p>
+            <p><textarea cols=50 rows=10>개인정보 내용</textarea></p>
+            <p><input type="checkbox" name="agree">약관동의</p>
+            <p><textarea cols=50 rows=10>약관동의 내용</textarea></p>
+            <p><input type="button" name="yes" value="확인"><input type="reset"></p>
+            <!-- type="reset" 알아서 초기화 시켜줌 -->
+            
+            <!-- <p><input type="submit" value = 저장></p> -->
+        </form>
+        
+        
+        <script>        
+            join.all.addEventListener('click',function(){
+                //감싸고있는 태그부터 호출해야함
+                console.log(join.all.value); // 클릭을 했는지만 알 수 있음 on만 표시됨
+                console.log(join.all.checked); // 체크 여부에 따라 true/false
+                
+                join.poll.checked = join.all.checked; // << 클릭할 때마다 ↑ t/f 블린값이 들어감 (if 필요없음)
+                join.agree.checked = join.all.checked;// poll / afree의 check상태를 정함
+
+                // if(join.all.checked){ 
+                //     // all.checked의 상태를 집어넣음 (true/false)
+                //     join.poll.checked = join.all.checked; 
+                //     join.agree.checked = join.all.checked;
+                // }else{
+                //     join.poll.checked = join.all.checked;
+                //     join.agree.checked = join.all.checked;
+                // }
+
+            });
+
+            join.yes.addEventListener('click',function(){                
+                // location.href="join2.html";                
+                
+                // (방법1)
+                // if(!join.poll.checked){// !을 입력함으로써 해당 체크의 조건이 false일 때~가 됨
+                //     alert('개인정보동의를 체크해 주세요');
+                //     return false; // 값을 반환함으로써 밑의 구문을 실행하지않음, 반환할 값이 없어서 false씀   
+                // };
+                // if(!join.agree.checked){
+                //     alert('약관동의를 체크해 주세요');
+                //     return false;      
+                // };
+
+
+                // (방법2)
+                if(!check(join.poll,'개인정보동의를 체크해 주세요')){
+                    return false;  
+                };
+                if(!check(join.agree,'약관동의를 체크해 주세요')){
+                    return false;  
+                };
+
+                function check(id,message){ // join.poll/agree > id, '개인정보/약관동의~' > message에 들어감
+                    if(id.checked){
+                        return true;
+                    }
+                    alert(message);
+                };
+
+
+
+                join.action = "join2.html" //join이라는 폼 요소안에 입력된 데이터들이 있으면, 그 데이터들을 가지고 넘어감 (권장)
+                join.submit();// input type중 submit의 역활
+
+            });
+
+            
+
+
+        </script>
+        
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>회원가입</title>
+        <meta name="description" content="Brackets에 대한 대화식 시작 안내서입니다.">
+    </head>
+    <body>
+        <style>
+            h1,div{margin:10px 0; width:700px; margin:0 auto;}
+            h1{text-align:center; border-bottom:1px solid #ddd; padding:100px 0 20px 0;}
+            span{display:block; text-align:center; padding:20px 0;}
+            p{border-bottom:1px solid #ddd; padding:15px 0; margin:0;}
+            .fieldlabel{width:120px;text-align:right; padding-right:10px;}
+            .btnfield{margin:20px 0 0 130px;}
+        </style>
+
+        <h1>회원가입</h1>
+        <div>
+            <form name="join2" action="join3">
+                <p>
+                    <input type="text" name="userId" placeholder="아이디">
+                    아이디는 영문 대소문자(4~12)를 작성해야합니다.
+                </p>
+                <p><input type="password" name="userPw" placeholder="패스워드"></p>
+                <p><input type="password" name="userPwCheck" placeholder="패스워드확인"></p>
+                <p><input type="text" name="userName" placeholder="이름"></p>
+                <p><input type="text" name="email" size="20" placeholder="이메일"></p>
+                <p>
+                    <select name="mPhone1">
+                        <option value="010" selected>010</option>
+                        <option value="011">011</option>
+                        <option value="016">017</option>
+                        <option value="018">018</option>
+                        <option value="019">019</option>
+                    </select>-
+                    <input name="mPhone2" type="number" size="4" maxlength="4"> -
+                    <input name="mPhone3" type="number" size="4" maxlength="4">
+                </p>
+                <p>
+                    <label>취미</label>
+                    <input type="checkbox" name="hobby" value="독서" >독서
+                    <input type="checkbox" name="hobby" value="낚시"  >낚시
+                    <input type="checkbox" name="hobby" value="수영" >수영
+                </p>
+                <p>
+                    <label>성별</label>
+                    <input type="radio" name="sex" value="남" checked >남자
+                    <input type="radio" name="sex" value="여" >여자
+                </p>
+
+                <p>
+                    <input type="file" name="profile" >
+                </p>
+
+                <p>
+                    <input type="file" name="profile" id="file" style="display:none;">
+                    <a id="fileButton">이쁜아이콘</a>
+                </p>
+
+                <span>
+                    <input type="submit" value="회원가입" name="submit">
+                    <!-- 입력값을 가지고 다음페이지로 넘어감 -->
+                    <input type="reset" value="취소">
+                </span>
+            </form>
+        </div>
+        
+        <script>
+            function validate() {
+                event.preventDefault();
+                var reg = /^[a-zA-Z0-9]{4,12}$/
+                // 아이디와 패스워드가 적합한지 검사할 정규식
+                var reg2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+                // 이메일이 적합한지 검사할 정규식  
+
+                // console.log(  join2.userId.value.match(reg)  );// 사용자가 입력한 데이터를 사용하고싶을 때(ex: 검색)
+                // console.log(  reg.test(join2.userId.value)  );// test가 정규식에 맞게 입력했는지 블린값을 줌
+                
+                if(!check(reg,join2.userId,'아이디는 4~12자를 입력하세요')){
+                    return false;
+                }                
+                if(!check(reg,join2.userPw,'패스워드는 4~12자를 입력하세요')){
+                    return false;
+                }
+                if(!check(reg2,join2.email,'이메일 형식을 확인하세요.')){
+                    return false;
+                }
+                function check(re,id,message){
+                    if(re.test(id.value)){
+                        return true;
+                    }
+                    alert(message);
+                    id.value = '';
+                    id.focus();            
+                }
+
+
+                if(join2.userPw.value != join2.userPwCheck.value){
+                    alert('비밀번호가 일치하지 않습니다.');
+                    join2.userPw.value = '';
+                    join2.userPwCheck.value = '';
+                    join2.userPwCheck.focus();
+                    return false;
+                };
+               
+
+                // console.log( join2.hobby.length )
+                var hobbyState = false;
+                for(var i=0; i < join2.hobby.length; i++){
+                    if(join2.hobby[i].checked){
+                        hobbyState = true;
+                    };
+                };
+                if(!hobbyState){ // true가 아닐때
+                    alert("취미를 체크하세요.");
+                };
+
+                
+            };
+
+        
+            join2.submit.addEventListener('click',validate) // 만들어놓은 함수안에서 정규식 유효성검사를함
+
+             //파일 트리거
+             // file > a로 이벤트 전달 
+            var fileButton = document.getElementById("fileButton");
+            fileButton.addEventListener("click", function() {
+                
+                var event = new MouseEvent("click"); //click 이벤트 생성
+                var file = document.getElementById("file"); //file -> display:none
+                file.dispatchEvent(event); //이벤트전달
+                
+            });
+
+            // $('file').trigger('click'); >> 제이쿼리 한 줄처리..
+
+            //     var arr = ''; // 주민번호 마지막 숫자 빼고 입력
+            //     var arr2 = '234567892345'; //주민번호 유효성체크하는 코드, 1이 빠졋음
+            //     var sum = 0;
+
+            //     for(var i = 0; i < arr.length; i++){
+            //         sum += arr[i] * arr2[i];
+            //     }
+            //     var total = sum%11;
+            //     console.log(11 - total); // 주민번호 마지막 숫자가 나옴
+           
+        </script>
+        
+        
+    </body>
+</html>

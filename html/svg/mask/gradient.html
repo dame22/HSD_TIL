@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="g1"></div>
+    <div class="g2"></div>
+    <div class="g3"><p data-p="80">0%</p></div>
+
+<style>
+
+div{
+    width: 1000px; height: 200px;
+}
+.g1{
+    background:linear-gradient(45deg,orange 50%,green 60%)
+    /* to 그라데이션 방향(top,bottom..) deg 각도가능, 색상뒤에 색이 차지할 범위*/
+}
+
+.g2{
+    width: 400px; height: 400px; border-radius: 100%;
+    background:radial-gradient(at 70% 70%,#fff 3%,#f00)
+    /*
+    circle, ellipse(기본값)
+    at 30% 20% (x,y 값)
+    farthest-corner, farthest-side,
+    closest-corner, closest-side
+    */
+}
+.g3{
+    width: 200px; height: 200px;
+    background:conic-gradient(from 0deg,orange 1%,green 0%);
+    /*
+        from 0deg
+        at 0% 0%
+    */
+    position: relative;
+    border-radius: 50%;
+}
+
+.g3 p{
+    margin: 0;
+    position: absolute;
+    width: 70%; height: 70%;
+    background: #fff;
+    left: 15%; top: 15%;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 140px;
+}
+
+</style>
+
+<script>    
+
+    var g3 = document.querySelector('.g3');
+    var i = 0;
+    // data-p="80"
+    g3.children[0].dataset.p
+
+
+    function skill(k){
+        loop = setInterval(function(){
+            i++;            
+            if(i == k){
+                clearInterval(loop);
+                //i=0;
+            }        
+        g3.children[0].textContent = i + '%';
+        g3.style = `background:conic-gradient(from 0deg,orange ${i}%,green 0%)`
+        },15)
+
+    }
+
+    skill(g3.children[0].dataset.p);
+   
+
+</script>
+
+</body>
+</html>

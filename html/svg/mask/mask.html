@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mask</title>
+</head>
+<body>
+    
+    <svg width="1000" height="1000">        
+        <mask id="mask">
+            <text x="100" y="400" fill="#fff" font-size="300" font-weight="bold" >
+                OAO
+            </text>
+        </mask>
+
+        <image mask="url(#mask)" width="100%" height="100%" xlink:href="../img/img-01.jpg"></image>
+        
+    </svg>
+
+
+    <!-- <img src="../img/img-06.jpg" alt="" class="clip" width="600px"> -->
+
+    <style>
+
+        /* .clip{
+            animation: clip 3s infinite;
+        }
+
+        @keyframes  clip{
+            0%{
+                clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 79%, 100% 100%, 53% 100%, 0 100%, 0 57%, 0 33%, 0 0);
+            }
+            30%{
+                clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 79%, 49% 49%, 53% 100%, 0 100%, 0 57%, 0 33%, 0 0);
+            }
+            60%{
+                clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 79%, 49% 49%, 53% 100%, 49% 48%, 0 57%, 0 33%, 0 0);
+            }
+            80%{
+                clip-path: polygon(50% 0%, 100% 0, 100% 35%, 100% 79%, 49% 49%, 49% 49%, 49% 48%, 48% 49%, 48% 49%, 49% 49%);
+            }
+            100%{
+                clip-path: polygon(51% 51%, 49% 50%, 49% 50%, 50% 49%, 49% 49%, 49% 49%, 49% 48%, 48% 49%, 48% 49%, 49% 49%);
+
+
+            }
+        } */
+
+    </style>
+
+</body>
+</html>

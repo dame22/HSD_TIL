@@ -1,8 +1,9 @@
 @import url('common.css');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sunflower&display=swap');
 /*----------------------------*/
 /* color
-#ebe1d2#d9c0a2#d9a86d#be9168#73503c#591c17#fcb71e#ffd500
+#ebe1d2#d9c0a2#d9a86d#be9168#73503c#591c17#fcb71e#ffd500#afcaff
 */
 /*----------------------------*/
 
@@ -15,6 +16,7 @@
 .main{
   width: 100vw;
   height: 100vh;
+  background: #f7f7f7;
 
 }
 
@@ -217,25 +219,215 @@ header nav ul li a{
 }
 .main div .visual img:nth-of-type(2){
   top:0;
-  z-index: -10;
+  z-index: -10;  
   display: block;
-  transition: .5s;
   width: 342px; 
-  transform: scale(0.9);  
- 
+  transform: scale(0.9);   
 }
-.main div .visual img:nth-of-type(3){
+
+
+
+/* section */
+
+section .title{
+  margin: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center; 
+  padding: 0 15%;
+
+}
+section .title h3{
+  width: 100%;
+  text-align: center;
+  font-family: 'Nanum Myeongjo', serif;
+  font-weight: unset; 
+  font-size: 2.2em;
+  margin-bottom: 100px;
+}
+
+section .title figure{
+  width: 500px;
+  height: 300px; 
+  overflow: hidden;
+  margin: 10px;
+  position: relative;
+  background: #000  
+}
+section .title figure img{
+  width: 100%;
+  opacity: 0.3;
+}
+section .title figure:nth-of-type(1) img{
+  transform: translateY(-40%);
+}
+section .title figure:nth-of-type(2) img{
+  transform: translateY(-25%);
+}
+section .title figure:nth-of-type(3) img{
+  transform: translateY(-15%);
+}
+section .title figure:nth-of-type(4) img{
+  height: 100%;
+}
+
+section .title figure figcaption{
   position: absolute;
-  opacity: 0;
-  transform: scale(0.6);
-  left: 41%; top: 39%;
+  left:0%; top: 0%;
+  width: 100%; height: 100%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  white-space: pre-line;
+}
+
+section .title figure figcaption em{
+  font-size: 1.3em;
+  font-style: unset;
+  color: #f7f7f7;
+  font-family: 'Nanum Myeongjo', serif;
+}
+section .title figure figcaption span{
+  position: absolute;
+  background: #eee;
+  z-index: 10;
+}
+section .title figure figcaption .borderTop{
+  left:0; top: 0; width: 0%;height: 15px;
+  transition:width 0.4s;  transition-delay: 0.3s;
+}
+section .title figure figcaption .borderRight{
+  right: 0; top: 0;
+  width:15px; height: 0%;
+  transition:height 0.4s; transition-delay: 0.2s;
+
+}
+section .title figure figcaption .borderBottom{
+  right: 0; bottom: 0;
+  width: 0%; height: 15px;
+  transition:width 0.4s; transition-delay: 0.1s;
+}
+section .title figure figcaption .borderLeft{
+  left:0; bottom: 0; width: 15px; height: 0%;
+  transition:height 0.4s; transition-delay: 0s;
+}
+
+section .title figure figcaption.active .borderTop{
+  width: 100%;
+ transition-delay: 0.4s;
+}
+section .title figure figcaption.active .borderRight{
+  height: 100%;
+  transition-delay: 0.5s;
+
+}
+section .title figure figcaption.active .borderBottom{
+  width: 100%;
+ transition-delay: 0.6s;
+}
+section .title figure figcaption.active .borderLeft{
+  height: 100%;
+  transition-delay: 0.7s;
+}
+
+section .subTitle{
+  width: 100%;
+  height: 600px;
+}
+section .subTitle .subLeft{
+  width: 50%; height: 100%;
+  float: left;
+  position: relative;
+}
+
+.subTitle .subLeft a{
+  cursor: pointer;
+  position: absolute;
+  width: 40px; height: 40px;
+  background: #eee;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+}
+.subTitle .subLeft .leftBtn{
+  left: 0; top: 40%;
+  }
+.subTitle .subLeft .leftBtn:after{
+  content: '';
+  width: 12px; height: 12px;
+  border-top: 2px solid #333;
+  border-left: 2px solid #333;
+  position: absolute; right: 10px;
+  transform: rotate(-45deg);
+}
+.subTitle .subLeft .rightBtn{
+  right: 0; top: 40%;
+  }
+.subTitle .subLeft .rightBtn:after{
+  content: '';
+  width: 12px; height: 12px;
+  border-top: 2px solid #333;
+  border-right: 2px solid #333;
+  position: absolute; left: 10px;
+  transform: rotate(45deg);
+}
+
+.subTitle .subLeft ul{
+  width: 100%;  height: 100%;
+  overflow: hidden;
+}
+.subTitle .subLeft ul li{
+  width: 100%; height: 100%;
+  text-align: center;
+}
+
+.subTitle .subLeft ul li img{
+ width: 25%;
+}
+.subTitle .subLeft ul li span{
+
 }
 
 
 
-/*  */
+section .subTitle .subRight{
+  width: 50%; height: 100%;
+  padding: 5%;
+  float: right;
+  background: url("../img/img_sub05.jpg") right bottom fixed no-repeat;
+  background-color: rgba(255,255,255,0.3);
+  background-blend-mode: screen;
+}
 
-#wrap section{
-  width: 100vw;
-  height: 100vh; 
+section .subTitle .subRight p{
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.8);
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  justify-content: center; align-items: center; 
+  text-align: center;
+}
+section .subTitle .subRight p em{
+  font-style: normal;
+}
+section .subTitle .subRight strong{
+  font-size: 2em;
+  color: #555;
+  letter-spacing: 5px;
+  font-family: 'Sunflower', sans-serif;
+}
+section .subTitle .subRight span{
+  font-size: 1.5em;
+  margin-bottom: 30px;
+  letter-spacing: 3px;
+  font-family: 'Sunflower', sans-serif;
+  
+}
+
+section .download{
+  clear: both;
 }

@@ -33,13 +33,13 @@ div{
 }
 .g3{
     width: 200px; height: 200px;
-    background:conic-gradient(from 0deg,orange 1%,green 0%);
+    background:conic-gradient(from 0deg,orange 0%,green 0%);
     /*
         from 0deg
         at 0% 0%
     */
     position: relative;
-    border-radius: 50%;
+   
 }
 
 .g3 p{
@@ -48,7 +48,6 @@ div{
     width: 70%; height: 70%;
     background: #fff;
     left: 15%; top: 15%;
-    border-radius: 50%;
     text-align: center;
     line-height: 140px;
 }
@@ -71,7 +70,7 @@ div{
                 //i=0;
             }        
         g3.children[0].textContent = i + '%';
-        g3.style = `background:conic-gradient(from 0deg,orange ${i}%,green 0%)`
+        g3.style = `background:conic-gradient(from -40deg,orange ${i}%,green 0%)`
         },15)
 
     }

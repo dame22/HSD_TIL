@@ -25,6 +25,35 @@ $(function(){
             });                   
         });   
        
+        var i = 0;
+        var liLen = $('.subLeft ul li').length;
+        $('.leftBtn').hide();
+        $('.leftBtn').on('click',function(){
+            i--;
+            slide();
+        });
+        $('.rightBtn').on('click',function(){
+            i++;
+            slide();           
+        });
+
+        function slide(){   
+            $('.subLeft ul').css({
+                left: -100 * i +  '%'
+            });
+                     
+            if(i == liLen -1){
+                $('.rightBtn').hide();                
+            }else{
+                $('.rightBtn').show();
+            }   
+
+            if(i == 0){
+                $('.leftBtn').hide();                
+            }else{
+                $('.leftBtn').show();
+            }          
+        };
         
 });
 

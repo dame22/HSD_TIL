@@ -1,0 +1,343 @@
+@import url('common.css');
+/* color
+#a0c3d2#ffd700#f16c63#fee5a2
+*/
+#main{
+    width: 100vw; height: 100vh;
+    background: #a0c3d2;
+    position: relative;
+}
+
+#main header{
+    height: 80px;
+    background: rgba(255,255,255,0.5);
+    padding: 0 10%;
+    display: none;
+}
+#main header.active{
+    display: block;
+}
+#main header nav{
+    width: 100%; height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#main nav h1 img{
+    width: 60px; height: 60px;
+}
+#main nav p{
+    width: 30px; height: 30px;
+    font-size: 0;
+}
+#main nav span{
+    width: 30px; height: 2px;
+    background: #333;
+    margin: 3px 0;
+}
+
+#main .pets{
+    width: 100%; height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#main .pets img{
+    position: absolute;
+    transition: .8s;
+}
+#main .pets .imgTop:nth-of-type(1){
+    top:-100%; left: 20%;
+}
+#main .pets .imgTop:nth-of-type(2){
+    top:-100%; right: 20%;
+}
+#main .pets .imgRight{
+    top: 40%; right: -100%;
+}
+#main .pets .imgBottom:nth-of-type(4){
+    bottom: -100%; right: 20%;
+}
+#main .pets .imgBottom:nth-of-type(5){
+    bottom: -100%; left: 20%;
+}
+#main .pets .imgLeft{
+    top: 40%; left: -100%;
+}
+
+
+#main .pets.active .imgTop:nth-of-type(1){
+    top:0; left: 20%;
+    transition-delay: 0s;
+}
+#main .pets.active .imgTop:nth-of-type(2){
+    top:0; right: 20%;
+    transition-delay: 0s;
+}
+#main .pets.active .imgRight{
+    top: 40%; right: 0;
+    transition-delay: 0.6s;
+}
+#main .pets.active .imgBottom:nth-of-type(4){
+    bottom: 0; right: 20%;
+    transition-delay: 0.3s;
+}
+#main .pets.active .imgBottom:nth-of-type(5){
+    bottom: 0; left: 20%;
+    transition-delay: 0.3s;
+}
+#main .pets.active .imgLeft{
+    top: 40%; left: 0;
+    transition-delay: 0.6s;
+}
+
+#main .txt{
+    position: absolute; left:50%; top:50%;
+    transform:translateY(-50%) translateX(-50%);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#main .txt img{
+    width: 100px; height: 100px;
+}
+#main .txt h2{
+    color: #333;
+    font-size: 4em;
+}
+#main .txt strong{
+    cursor: pointer;;
+    border-radius: 30px;
+    width: 50%; height: 10%;
+    margin-top: 80px;
+    background: #ffd700;
+    box-shadow: 8px 8px 0px 0px #000;
+    font-size: 1.5em; color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+#main .txt strong:hover{
+    box-shadow: 0px 0px 0px 0px #000;
+    transform: translate(8px, 8px) 
+}
+
+#explain{
+    width: 100vw; height: 100vh;
+    display: flex;
+}
+#explain .left{
+    width: 50%;height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 10%;
+}
+#explain .left h3{
+    color: #333;
+    font-size: 3em; 
+    position: relative; 
+}
+#explain .left h3:after{
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 30%;
+    background: #fee5a2;
+    z-index: -5;
+}
+#explain .left strong{
+    color: #333;
+    font-size: 2.5em;
+    position: relative;
+}
+#explain .left strong:after{
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    width: 100%; height: 30%;
+    background: #fee5a2;
+    z-index: -5;
+}
+#explain .left span{
+    width: 100%;
+    color: #666;
+    font-size: 1.5em;
+    font-weight: normal; 
+    position: relative;
+    white-space: pre-line; 
+}
+
+#explain .right{
+    width: 50%; height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    
+}
+#explain .right img{
+    width: 80%;
+    transform: translateX(100%);
+    transition: 0.5s;
+}
+#explain .right.active img{
+    transform: translateX(0);
+}
+
+
+
+
+#service{
+    width: 100vw; height: 100vh;
+    background: #a0c3d2;
+    display: flex;
+}
+#service .left{
+    width: 50%; height: 100%;
+    display: flex;flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#service .left h4{
+    color:#fff;
+    font-size: 2.5em;
+    white-space: pre-line;
+    text-align: center;
+}
+#service .left p:nth-of-type(1){
+    width: 480px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;  
+    margin-top: 100px;
+}
+#service .left span{
+    color: #fff;
+    font-size: 1.1em;
+    text-decoration: underline;
+    margin-top: 15px;
+}
+#service .left p:nth-of-type(2),p:nth-of-type(3){
+    background: #fff;
+    border-radius: 30px;
+    width: 25%; height: 5%;
+    display: flex; justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+#service .left p:nth-of-type(2){
+    margin-top: 150px;
+}
+#service .left p:nth-of-type(3){
+    margin-top: 20px;
+}
+#service .left p em{
+    font-style: normal;  
+    color: #a0c3d2;
+}
+#service .left p strong{
+    color: #a0c3d2;
+    margin-left: 10px;
+    font-size: 1.1em;
+
+}
+
+
+#service .right{
+    width: 50%; height: 100%;  
+    overflow: hidden;
+}
+#service .right div{
+    width: 100%; height: 33%;
+    margin-top: 100px;
+    position: relative;
+    overflow: hidden;
+    transition: .8s;
+}
+#service .right img{
+    width: 40%;
+    position: absolute;
+    left: 30%; top: 0;
+}
+#service .right img:nth-of-type(2){
+    z-index: -5;
+}
+#service .right div.active{
+    height: 100%;
+}
+#service .right div.active img:nth-of-type(2){
+    z-index:0;
+}
+
+#terms{
+    width: 100vw; height: 100vh;
+    background: #fee5a2;
+    display: flex;
+}
+#terms .left{
+    width: 50%;height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;  
+}
+
+#terms .left figure{
+    width: 300px; height: 400px;
+    background: #fff;
+    margin: 0 30px;  
+    position: relative;  
+}
+#terms .left figure span{
+    position: absolute;
+}
+#terms .left figure span{
+    position: absolute;
+    background: #f16c63;
+    z-index: 5;
+  }
+  #terms .left figure .borderTop{
+    left:0; top: 0; width: 0%;height: 20px;
+    transition:width 0.2s;  transition-delay: 0.3s;
+  }
+  #terms .left figure .borderRight{
+    right: 0; top: 0;
+    width:20px; height: 0%;
+    transition:height 0.2s; transition-delay: 0.2s;
+  
+  }
+  #terms .left figure .borderBottom{
+    right: 0; bottom: 0;
+    width: 0%; height: 20px;
+    transition:width 0.2s; transition-delay: 0.1s;
+  }
+  #terms .left figure .borderLeft{
+    left:0; bottom: 0; width: 20px; height: 0%;
+    transition:height 0.2s; transition-delay: 0s;
+  }
+  
+  #terms .left figure:hover .borderTop{
+    width: 100%;
+   transition-delay: 0.0s;
+  }
+  #terms .left figure:hover .borderRight{
+    height: 100%;
+    transition-delay: 0.1s;
+  
+  }
+  #terms .left figure:hover .borderBottom{
+    width: 100%;
+   transition-delay: 0.2s;
+  }
+  #terms .left figure:hover .borderLeft{
+    height: 100%;
+    transition-delay: 0.3s;
+  }
+
+  #terms .right{
+    width: 50%; height: 100%;    
+}

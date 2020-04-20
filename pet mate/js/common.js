@@ -17,7 +17,6 @@ $(function(){
     var wCroll = '';
     var exCroll = $('#explain').offset().top;
     var serviceCroll = $('#service').offset().top;
-    var termsCroll = $('#terms').offset().top;
     var bln = true;
     $(window).on('scroll',function(){          
         wCroll =  $(window).scrollTop();
@@ -33,21 +32,20 @@ $(function(){
         }   
 
         if(serviceCroll < wCroll){
-            $('#service .right div').addClass('active'); 
+            // $('#service .right div').addClass('active'); 
             if(bln == true){
                 bln = false
                 counting();
-            }            
-        }
-
-        if(termsCroll < wCroll){
-            $('#terms figure').addClass('active')
-            for(var i=0; i < $('#terms figure').length; i++){
-                $('#terms figure figcaption').eq(i).css({
+            } 
+            
+            $('#service figure').addClass('active')
+            for(var i=0; i < $('#service figure').length; i++){
+                $('#service figure figcaption').eq(i).css({
                     transitionDelay : 0 + '.' + i * 3 + 's'
                 })
             }
         }
+        
     });
 
     function counting(){

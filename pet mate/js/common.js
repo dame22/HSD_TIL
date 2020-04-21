@@ -3,8 +3,6 @@ $(function(){
     function start(){
         $('#main .pets').addClass('active');
     }
-
-
    
     $('#main .txt strong').on('click',function(){
         var exoffTop = $('#explain').offset().top;
@@ -78,7 +76,31 @@ $(function(){
             new numberCounter("counter2", 56789);
     };
     
-       
+    $('#main header .menu').on('click',function(){
+        $('#main header nav').addClass('active');
+    });
+    $('#main header nav p').on('click',function(){
+        $('#main header nav').removeClass('active');
+    });
+     
+    $('#download .top a').on('click',function(e){
+        e.preventDefault();
+        $('#download #popup').addClass('active')
+    });
+    $('.message .close').on('click',function(){
+        $('#download #popup').removeClass('active')
+    });
 
+    $('.send button').eq(0).on('click',function(){
+        console.log('send')      
+        if($('.send input:checkbox[id="agree"]').is(':checked')){
+            alert('문자가 발송되었습니다.')
+        }else{
+            alert('개인정보 수집 및 이용 동의에 체크해주세요.')
+        }   
+    })
+    $('.send button').eq(1).on('click',function(){
+        $('.send ul').toggleClass('active');
+    })
 
 })

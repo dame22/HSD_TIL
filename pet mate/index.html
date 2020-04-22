@@ -5,32 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pets Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="js/common.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/header.js"></script>
 </head>
 <body>
     <div id="wrap">
         <section id="main">
             <header>
-                <p class="menu"> MENU </p>                
-                <nav>
-                    <p>
-                        <span></span>
-                        <span></span>
-                    </p>                    
-                    <ul>                    
-                        <li><a href="">방문서비스</a></li>
-                        <li><a href="">자주 묻는 질문</a></li>
-                        <li><a href="">이용후기</a></li>
-                        <li><a href="">이용약관</a></li>
-                    </ul>
-                    
-                    <div>
-                        <a href=""><img src="img/icon_sns01.png" alt=""></a>
-                        <a href=""><img src="img/icon_sns02.png" alt=""></a>
-                        <a href=""><img src="img/icon_sns03.png" alt=""></a>
-                    </div>
-                </nav>
+                menu
             </header>
 
             <div class="pets">
@@ -118,13 +102,15 @@
                     </div>
 
                     <div class="send">
-                        <input type="text" placeholder="휴대폰번호를 입력해주세요 (-제외)" maxlength="11">
-                        <button type="button">보내기</button>
-                        <input type="checkbox" id="agree">
-                        <label for="agree">      
-                            <i>개인정보 수집 및 이용에 동의 합니다.</i>
-                        </label>
-                        <button type="button">약관보기</button>
+                        <form name="phone">
+                            <input type="text" id="number" placeholder="휴대폰번호를 입력해주세요 (-제외)" maxlength="11">
+                            <button type="button">보내기</button>
+                            <input type="checkbox" id="agree">
+                            <label for="agree">      
+                                <i>개인정보 수집 및 이용에 동의 합니다.</i>
+                            </label>
+                            <button type="button">약관보기</button>
+                        </form>
                         
                         <ul>
                             <li>개인정보 수집/이용 방침</li>
@@ -168,7 +154,7 @@
                 </div>
 
                 <p>
-                    <img src="img/sub_img05.png" alt="">
+                    <img src="img/sub_img03.png" alt="">
                 </p>
 
             </div>               
@@ -187,7 +173,7 @@
                 </p>
             </div>
         </section>
-
+        
         <footer>
             <ul>
                 <li> 주식회사 펫츠홈 </li>

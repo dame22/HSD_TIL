@@ -1,21 +1,22 @@
 $(function(){
+    $('header').load("header.html"); // menu 불러오기
+
     start();
     function start(){
         $('#main .pets').addClass('active');
-    }
-   
-    $('#main .txt strong').on('click',function(){
-        var exoffTop = $('#explain').offset().top;
-
-        $('html').animate({
-            scrollTop : exoffTop
-        })
-    });
-
+    }  
+    
     var wCroll = '';
     var exCroll = $('#explain').offset().top;
     var serviceCroll = $('#service').offset().top;
     var bln = true;
+
+    $('#main .txt strong').on('click',function(){
+        $('html').animate({
+            scrollTop : exCroll
+        })
+    });
+
     $(window).on('scroll',function(){          
         wCroll =  $(window).scrollTop();
 
@@ -24,25 +25,43 @@ $(function(){
                                  
         }else{
             $('#explain .right').removeClass('active');
-        }
+        };
         if(serviceCroll-100<wCroll){
             $('#explain .right').removeClass('active');
-        }   
+        };   
 
-        if(serviceCroll < wCroll){
-            // $('#service .right div').addClass('active'); 
+        if(serviceCroll == wCroll){            
             if(bln == true){
                 bln = false
                 counting();
             } 
             
             $('#service figure').addClass('active')
+
             for(var i=0; i < $('#service figure').length; i++){
                 $('#service figure figcaption').eq(i).css({
                     transitionDelay : 0 + '.' + i * 3 + 's'
                 })
             }
-        }
+        };
+
+        $(function(){
+            var move = 0
+
+             $('section').on('mousewheel',function(e){            
+                var delta = e.originalEvent.wheelDelta;
+                
+                if(delta < 0 ){ // 내림-120                   
+                    move = $(this).next().offset().top;
+                }else{                    
+                    move = $(this).prev().offset().top;
+                }
+     
+                 $('html').stop().animate({
+                     scrollTop : move
+                 },1000);                       
+            });
+        });
         
     });
 
@@ -75,13 +94,21 @@ $(function(){
             new numberCounter("counter1", 45678);
             new numberCounter("counter2", 56789);
     };
+setTimeout(function(){
+    $('header .header .menu').on('click',function(e){
+        $('header .header nav').addClass('active');
+    });
+    $('.header nav p').on('click',function(){
+        $('header nav').removeClass('active');
+    });
+},500)
     
-    $('#main header .menu').on('click',function(){
-        $('#main header nav').addClass('active');
+    $('header .header .menu').on('click',function(e){
+        
+        $('header .header nav').addClass('active');
     });
-    $('#main header nav p').on('click',function(){
-        $('#main header nav').removeClass('active');
-    });
+    
+    
      
     $('#download .top a').on('click',function(e){
         e.preventDefault();
@@ -91,13 +118,19 @@ $(function(){
         $('#download #popup').removeClass('active')
     });
 
-    $('.send button').eq(0).on('click',function(){
-        console.log('send')      
-        if($('.send input:checkbox[id="agree"]').is(':checked')){
-            alert('문자가 발송되었습니다.')
+    $('.send button').eq(0).on('click',function(){   
+        var phoneNum = $('.send input:text[id="number"]').val();
+        var reg = /^(01[016789]{1}|02|0[3-9]{1}[0-9]{1})([0-9]{3,4})([0-9]{4})$/;
+        if(reg.test(phoneNum)){
+            if($('.send input:checkbox[id="agree"]').is(':checked')){
+                alert('문자가 발송되었습니다.');
+            }else{
+                alert('개인정보 수집 및 이용 동의에 체크해주세요.');
+            }
         }else{
-            alert('개인정보 수집 및 이용 동의에 체크해주세요.')
-        }   
+            alert('(-)제외 정확한 휴대폰번호를 입력해주세요')
+        }
+           
     })
     $('.send button').eq(1).on('click',function(){
         $('.send ul').toggleClass('active');

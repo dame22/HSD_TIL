@@ -3,16 +3,17 @@
 #a0c3d2#ffd700#f16c63#fee5a2
 */
 
-#wrap{
-    overflow: hidden;
+body{
+overflow: hidden;
 }
+#wrap{}
 #main{
     width: 100vw; height: 100vh;
     background: #a0c3d2;
     position: relative;
 }
 /* MENU */
-#main header{
+/* #main header{
     width:40%;
     position: fixed; left: 60%; top: 0;
     z-index: 10;
@@ -79,7 +80,7 @@
 }
 #main header nav div img{
     margin: 0 15px;
-}
+} */
 
 
 /* =========== */
@@ -515,7 +516,8 @@
     color: #999;font-weight: bold;
     font-size: 1.2em;
 }
-.message .send{
+.message .send{}
+.message .send form{
     display: flex; flex-wrap: wrap;
     width: 400px; justify-content: center;
 }

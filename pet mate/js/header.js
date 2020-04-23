@@ -1,5 +1,6 @@
 $(function(){
     $('header').load('header.html');
+    $('footer').load('footer.html');
 
     setTimeout(function(){
         $('header .menu').on('click',function(){

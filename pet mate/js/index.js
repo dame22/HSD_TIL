@@ -115,7 +115,8 @@ setTimeout(function(){
         $('#download #popup').addClass('active')
     });
     $('.message .close').on('click',function(){
-        $('#download #popup').removeClass('active')
+        $('#download #popup').removeClass('active');
+        $('.send ul').removeClass('active');
     });
 
     $('.send button').eq(0).on('click',function(){   

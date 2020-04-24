@@ -12,7 +12,7 @@ div h1{
 div h1:after{
     content:'';
     position: absolute; left: -3%; bottom: 0;
-    width: 15%; height: 30%;
+    width: 13%; height: 30%;
     background: #a0c3d2; z-index: -5;
 }
 div strong{

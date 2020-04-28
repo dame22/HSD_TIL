@@ -1,4 +1,5 @@
 @import url('common.css');
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 /* color
 #a0c3d2#ffd700#f16c63#fee5a2
 */
@@ -83,9 +84,11 @@ overflow: hidden;
 #main .txt h1{
     color: #333;
     font-size: 4em;
+    font-family: 'Julius Sans One', sans-serif;
+    margin-top:30px;
 }
 #main .txt strong{
-    cursor: pointer;;
+    cursor: pointer; font-weight: unset;
     border-radius: 30px;
     width: 50%; height: 10%;
     margin-top: 80px;

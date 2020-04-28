@@ -40,7 +40,7 @@ section .qna div{
     height: 150px;
 }
 .qna p span{
-    height: 150px;    
+    height: 150px; width:100%;
     display: flex; 
     white-space: pre-line; flex-direction: column;
     justify-content: center;
@@ -49,10 +49,10 @@ section .qna div{
     font-size:14px;
 }
 
-.qna p span mark{
+.qna p span small{
+    display:inline-block !important;
     color: #fff; font-size:14px;
-    width: 32%;
-    margin: 10px 0; padding: 0 10px;
+    width: 32% ; margin: 10px 0; padding: 0 10px;
     background: #f16c63;
 }
 .qna strong{
@@ -60,7 +60,7 @@ section .qna div{
     height: 60px; color: #333;
     font-weight: unset;
     position: relative; overflow: hidden;
-    cursor: pointer;;
+    cursor: pointer;
 }
 .qna strong:after{
     content: '';
@@ -129,7 +129,7 @@ section .qna div{
     .qna p span{     
         font-size:1.3vw;       
     }
-    .qna p span:last-of-type mark{
+    .qna p span small{
        font-size:1.4vw;       
     }
     .bottom strong{

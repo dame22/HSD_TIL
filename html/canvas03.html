@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas03</title>
+</head>
+<body>
+    
+    <canvas id="canvas" width="600" height="600">
+        현재 브라우저가 canvas를 지원하지 않습니다.
+    </canvas>
+
+    <script>
+
+        var canvas = document.querySelector('#canvas');
+        var ctx = canvas.getContext('2d');
+
+        canvas.style.border = "1px solid #f00";
+
+        
+        ctx.beginPath();
+        ctx.moveTo(192.5, 175.5);
+        ctx.bezierCurveTo(139.3, 217.0, 62.5, 207.4, 21.1, 154.1);
+        ctx.bezierCurveTo(-12.0, 111.5, -4.4, 50.1, 38.2, 17.0);
+        ctx.bezierCurveTo(72.3, -9.5, 121.4, -3.4, 147.9, 30.7);
+        ctx.bezierCurveTo(169.2, 58.0, 164.2, 97.3, 137.0, 118.5);
+        ctx.bezierCurveTo(115.2, 135.4, 83.7, 131.5, 66.8, 109.7);
+        ctx.bezierCurveTo(53.2, 92.2, 56.3, 67.1, 73.8, 53.5);
+        ctx.bezierCurveTo(87.7, 42.6, 107.9, 45.2, 118.7, 59.1);
+        ctx.bezierCurveTo(127.4, 70.3, 125.4, 86.4, 114.2, 95.1);
+        ctx.bezierCurveTo(105.3, 102.0, 92.4, 100.4, 85.5, 91.5);
+        ctx.bezierCurveTo(79.9, 84.3, 81.2, 74.0, 88.3, 68.5);
+        ctx.stroke();
+
+
+        var end = 0;
+        
+        function draw(){
+            end += 5;
+
+            ctx.clearRect(0,300,canvas.width,canvas.height);
+            ctx.beginPath(); // 연결되서 그리는게 아니라 새로그림
+            ctx.lineWidth = 10; 
+            ctx.arc(100, 300, 50, 0, Math.PI / 180 * end, false); // x,y,반지름,0deg,360deg, false = 시계방향 (기본값), true = 반시계
+            ctx.stroke();
+            
+            if(end >= 360)return;
+            requestAnimationFrame(draw);
+        }
+        draw();
+
+        
+        // PI = 180deg, (Math.PI / 180 * 45 = 45deg)
+        
+
+        
+        
+
+
+    </script>
+
+
+</body>
+</html>

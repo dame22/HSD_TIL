@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>canvas04</title>
+</head>
+<body>
+    
+    <canvas id="canvas" width="600" height="600">
+        현재 브라우저가 canvas를 지원하지 않습니다.
+    </canvas>
+
+
+
+    <script>
+
+        var canvas = document.querySelector('#canvas');
+        var ctx = canvas.getContext('2d');
+
+        canvas.style.border = "1px solid #f00";
+
+        //text
+        ctx.font = '60px serif';
+        ctx.fillStyle = 'red';
+        ctx.textAlign = 'center';
+        ctx.fillText('Hello',canvas.width/2,canvas.height/2);
+
+        
+        //image (x,y,width,height)
+        var img = new Image();
+        // var img = document.createElement('img');
+        img.src = 'img/sub_img06.png'
+        img.addEventListener('load',function(){
+            ctx.drawImage(img,100,100,200,100);
+
+            //이미지, 원본이미지의 x, y, width, height, 캔버스의 x, y, width, height
+            ctx.drawImage(img,0,0,400,300,100,300,100,100);
+        })
+        
+        
+
+
+    </script>
+
+
+</body>
+</html>
